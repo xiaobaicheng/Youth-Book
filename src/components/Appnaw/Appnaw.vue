@@ -18,7 +18,7 @@
       >
     </div>
     <div class="naw-one">
-      <router-link to="/found">
+      <router-link to="/listenbooks">
         <div class="imgbox">
           <img src="../../assets/img/listen.png" alt="" />
         </div>
@@ -26,7 +26,7 @@
       >
     </div>
     <div class="naw-one">
-      <router-link to="/listenbooks">
+      <router-link to="/found">
         <div class="imgbox">
           <img src="../../assets/img/faxian.png" alt="" />
         </div>
