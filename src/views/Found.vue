@@ -8,7 +8,9 @@
       <span> 广场</span>
       <div class="Line" v-show="show"></div>
     </div>
-    <div class="purse"></div>
+    <div class="purse" v-show="show"></div>
+    <div class="purse1" v-show="!show"></div>
+    <div class="purse1" v-show="!show"></div>
   </div>
   <div class="centent">
     <div v-show="!loginShow"><Concern></Concern></div>
@@ -18,11 +20,11 @@
 
 
 <script>
-import Concern from "../components/found/Concern.vue"
-import Square from "../components/found/Square.vue"
+import Concern from "../components/found/Concern.vue";
+import Square from "../components/found/Square.vue";
 export default {
   name: "Appphonelogin",
-  components: {Concern,Square},
+  components: { Concern, Square },
   data() {
     return {
       show: false,
@@ -46,13 +48,14 @@ export default {
   display: flex;
   height: 120px;
   align-items: center;
-  justify-content: space-around;
   font-size: 18px;
   .enroll {
-    margin-left: 22%;
+    margin-left: 28%;
+    font-size: 15px;
+    font-weight: 600;
     height: 20%;
-    .oneLine{
-            background-color: #333333;
+    .oneLine {
+      background-color: #333333;
       height: 4px;
       width: 30px;
       margin: auto;
@@ -60,10 +63,11 @@ export default {
     }
   }
   .logn {
-    margin-left: -18%;
+    margin-left: 10%;
     height: 20%;
-
-  .Line {
+    font-size: 15px;
+    font-weight: 600;
+    .Line {
       background-color: #333333;
       height: 4px;
       width: 30px;
@@ -74,14 +78,27 @@ export default {
   .purse {
     height: 39px;
     width: 39px;
-    margin-right: -10%;
+    margin-right: -7%;
     border-radius: 50%;
+    margin-left: 26%;
     background-color: aliceblue;
   }
+  .purse1 {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 7%;
+    margin-right: 2%;
+    background-color: aliceblue;
+    &:nth-child(2) {
+      margin-left: 10px;
+    }
+  }
 }
-.centent{
-    margin-left: 4%;
-    margin-right: 4%;
-    width: 92%;
+.centent {
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 92%;
+
 }
 </style>
