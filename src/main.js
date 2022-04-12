@@ -7,10 +7,9 @@ import VueTouch from 'vue-touch'
 
 const app = createApp(App)
 installElementPlus(app)
-app.use(VueTouch, {name: 'v-touch'})
+app.use(VueTouch, { name: 'v-touch' })
 
 VueTouch.config.swipe = {
-
      threshold: 100 //手指左右滑动距离
 
 }

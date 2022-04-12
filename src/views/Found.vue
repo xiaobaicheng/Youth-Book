@@ -9,8 +9,10 @@
       <div class="Line" v-show="show"></div>
     </div>
     <div class="purse" v-show="show"></div>
-    <div class="purse1" v-show="!show"></div>
-    <div class="purse1" v-show="!show"></div>
+    <div v-show="!show" class="two">
+      <div class="purse1" ></div>
+      <div class="purse1"></div>
+    </div>
   </div>
   <div class="centent">
     <div v-show="!loginShow"><Concern></Concern></div>
@@ -50,7 +52,7 @@ export default {
   align-items: center;
   font-size: 18px;
   .enroll {
-    margin-left: 28%;
+    margin-left: 35%;
     font-size: 15px;
     font-weight: 600;
     height: 20%;
@@ -83,15 +85,22 @@ export default {
     margin-left: 26%;
     background-color: aliceblue;
   }
+  .two{
+    display: flex;
+    width: 35%;
+    margin-right: -7%;
+    justify-content: space-around;
+  }
   .purse1 {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    margin-left: 7%;
-    margin-right: 2%;
+    margin-left: 10%;
+    // margin-right: 2%;
     background-color: aliceblue;
+    outline: 1px black solid;
     &:nth-child(2) {
-      margin-left: 10px;
+      // margin-left: 10px;
     }
   }
 }
@@ -99,6 +108,5 @@ export default {
   margin-left: 4%;
   margin-right: 4%;
   width: 92%;
-
 }
 </style>

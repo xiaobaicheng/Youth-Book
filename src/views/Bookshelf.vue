@@ -1,13 +1,19 @@
 <template>
-  <h1>书架</h1>
 </template>
 
 <script>
 export default {
+  name: "Bookshelf",
+  data() {
+    return {
+     
+    };
+  },
+  methods: {
 
-}
+  },
+};
 </script>
 
 <style>
-
 </style>

@@ -35,6 +35,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+/deep/.el-carousel__button{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
 header{
   height: 50px;
   width: 100%;

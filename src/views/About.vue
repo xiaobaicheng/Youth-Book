@@ -111,6 +111,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+/deep/.el-carousel__button{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
 .contant {
   height: 100%;
   margin-left: 5%;

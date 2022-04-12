@@ -62,7 +62,36 @@
       <span>列表</span>
     </div>
   </div>
-      
+  <div class="dub">
+    <div class="dub-box">
+      <div class="imgbox">
+        <img src="../../assets/img/apic27508.jpg" alt="" />
+      </div>
+      <span>角色周刊73：高中教长慕言官方生日</span>
+      <p>精彩章节小说配音</p>
+    </div>
+    <div class="dub-box">
+      <div class="imgbox">
+        <img src="../../assets/img/view.jpg" alt="" />
+      </div>
+      <span>角色周刊73：高中教长慕言官方生日</span>
+      <p>精彩章节小说配音</p>
+    </div>
+    <div class="dub-box">
+      <div class="imgbox">
+        <img src="../../assets/img/zzpic20739.jpg" alt="" />
+      </div>
+      <span>角色周刊73：高中教长慕言官方生日</span>
+      <p>精彩章节小说配音</p>
+    </div>
+    <div class="dub-box">
+      <div class="imgbox">
+        <img src="../../assets/img/zzpic20739.jpg" alt="" />
+      </div>
+      <span>角色周刊73：高中教长慕言官方生日</span>
+      <p>精彩章节小说配音</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -150,6 +179,28 @@ header {
       width: 20px;
       border-radius: 50%;
       background-color: cadetblue;
+    }
+  }
+}
+.dub {
+  margin-top: 20px;
+  column-count: 2;
+  column-gap: -10px;
+  .dub-box {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-bottom: 10px;
+    // &:nth-child(4){
+    //   margin-top: -100px;
+    // }
+    .imgbox {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
