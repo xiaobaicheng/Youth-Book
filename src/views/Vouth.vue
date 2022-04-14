@@ -92,14 +92,14 @@ export default {
     background: url(../assets/img/wqwqwqw.png) no-repeat center;
     background-size: 100% 94%;
     .Skip{
-      margin-left: 15%;
+      // margin-left: 15%;
     }
     h1{
-      margin-left: 40%;
+      margin-left: 27%;
     }
     .poen{
       border: 2px #E6B08A solid;
-      margin-left: -53%;
+      margin-left: -65%;
       height: 47px;
       width: 180px;
       margin-top: 23px;

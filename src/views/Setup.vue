@@ -1,7 +1,9 @@
 <template>
   <div class="wrap">
     <header>
-      <div class="purue"></div>
+      <div class="purue" @click="returnabount">
+        <img src="../assets/img/setup.png" alt="">
+      </div>
       <span>设置</span>
     </header>
   </div>
@@ -118,6 +120,11 @@ export default {
       gttps: true,
     };
   },
+  methods:{
+    returnabount(){
+      this.$router.push("/About")
+    }
+  }
 };
 </script>
 
@@ -135,11 +142,13 @@ header {
   display: flex;
   align-items: center;
   .purue {
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
-    background-color: aqua;
-    outline: 1px black solid;
+    img{
+      width: 100%;
+      height: 100%;
+    }
     // padding-top  : 30px;
   }
   span {
@@ -187,10 +196,10 @@ button{
   margin-right: 20%;
   width: 65%;
   margin-top: 24px;
-  background-color: rgba(220, 220, 220, 0.367);
-  color: black;
-  border: 1px #fff solid;
+  background-color: #4F9684;
+  color: #ffffff;
   border-radius: 14px;
+  border: none;
 
 }
 </style>

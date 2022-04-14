@@ -51,6 +51,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+hr{
+background-color: #85E0C8;
+}
 .nav {
   justify-content: space-between;
   display: flex;
