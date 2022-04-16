@@ -2,21 +2,23 @@
   <div class="broder">
     <div class="enroll" @click="isShow">
       <span> 关注</span>
-      <div class="oneLine" v-show="!show"></div>
+      <div class="oneLine" v-show="show"></div>
     </div>
     <div class="logn" @click="isShow">
       <span> 广场</span>
-      <div class="Line" v-show="show"></div>
+      <div class="Line" v-show="!show"></div>
     </div>
-    <div class="purse" v-show="show"></div>
-    <div v-show="!show" class="two">
+    <div class="purse" v-show="!show">
+      <img src="../assets/img/found/sousuo.png" alt="">
+    </div>
+    <div v-show="show" class="two">
       <div class="purse1" ></div>
       <div class="purse1"></div>
     </div>
   </div>
   <div class="centent">
-    <div v-show="!loginShow"><Concern></Concern></div>
-    <div v-show="loginShow"><Square></Square></div>
+    <div v-show="loginShow"><Concern></Concern></div>
+    <div v-show="!loginShow"><Square></Square></div>
   </div>
 </template>
 
@@ -78,12 +80,14 @@ export default {
     }
   }
   .purse {
-    height: 39px;
-    width: 39px;
+    height: 25px;
+    width: 25px;
     margin-right: -7%;
     border-radius: 50%;
     margin-left: 26%;
-    background-color: aliceblue;
+    img{
+      height: 100%;
+    }
   }
   .two{
     display: flex;
@@ -105,6 +109,7 @@ export default {
   }
 }
 .centent {
+  margin-top: -11%;
   margin-left: 4%;
   margin-right: 4%;
   width: 92%;

@@ -40,7 +40,7 @@ export default {
   margin-left: 30%;
   margin-right: 30%;
   width: 40%;
-  padding-top: 60px;
+  padding-top: 3.75rem;
   img {
     width: 100%;
   }
@@ -48,11 +48,11 @@ export default {
 }
 header {
   margin-left: 7%;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 .purue {
-  height: 20px;
-  width: 20px;
+  height: 1.25rem;
+  width: 1.25rem;
   border-radius: 50%;
   img {
     width: 100%;
@@ -60,33 +60,33 @@ header {
   }
 }
 .juven{
-    margin-top: 70px;
-    // line-height: 37px;
+    margin-top: 4.375rem;
+    // line-height: 2.3125rem;
     margin-left: 17%;
     margin-right: 17%;
     width: 66%;
     h1{
         text-align: center;
-        font-size: 22px;
+        font-size: 1.375rem;
     }
     ul{
-        margin-top: 25px;
+        margin-top: 1.5625rem;
         li{
-            padding-top: 10px;
+            padding-top: 0.625rem;
             list-style-type:disc;
-            font-size: 13px;
-            line-height: 26px;
+            font-size: 0.8125rem;
+            line-height: 1.625rem;
             color: #333333;
         }
     }
 }
 button{
-        font-size: 22px;
+        font-size: 1.375rem;
 
-    margin-top: 100px;
-    border-radius: 10px;
-    height: 60px;
-    width: 300px;
+    margin-top: 6.25rem;
+    border-radius: 0.625rem;
+    height: 3.75rem;
+    width: 18.75rem;
     margin-left: 14%;
     background-color: #333333;
     color: #ffffff;

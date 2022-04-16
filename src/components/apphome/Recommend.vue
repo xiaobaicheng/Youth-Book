@@ -183,7 +183,7 @@ export default {
 
 <style lang="less" scoped>
 .blac-o {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 .block {
   width: 90%;
@@ -194,7 +194,7 @@ export default {
 }
 .el-carousel__item {
   // margin:0 auto;
-  border-radius: 16px;
+  border-radius: 1rem;
   img {
     width: 100%;
     height: 100%;
@@ -205,9 +205,9 @@ export default {
 }
 .el-carousel__item h3 {
   // color: #475669;
-  font-size: 14px;
+  font-size: 0.875rem;
   opacity: 0.75;
-  line-height: 150px;
+  line-height: 9.375rem;
   margin: 0;
 }
 
@@ -220,18 +220,18 @@ export default {
 }
 .list {
   width: 100%;
-  height: 100px;
+  height: 6.25rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   .list-one {
     width: 25%;
     height: 100%;
     align-items: center;
     text-align: center;
     .imgBox {
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       border-radius: 50%;
       margin-left: 24%;
       margin-top: 14%;
@@ -240,7 +240,7 @@ export default {
       }
     }
     p {
-      margin-top: 16px;
+      margin-top: 1rem;
       color: #333333;
     }
   }
@@ -248,34 +248,34 @@ export default {
 
 .div {
   overflow: hidden;
-  height: 118px;
+  height: 7.375rem;
   margin-left: 2%;
-  margin-top: 18px;
+  margin-top: 1.125rem;
   .box::-webkit-scrollbar {
     display: none;
   }
   .box {
     // background: #eee;
-    padding: 10px 0;
+    padding: 0.625rem 0;
     white-space: nowrap; /*文本不会换行，文本会在在同一行上继续*/
     overflow-y: auto; /*可滑动*/
     .box1 {
       width: 28%;
       margin-left: 3%;
-      height: 100px;
+      height: 6.25rem;
       background: #fff;
       display: inline-block; /*行内块元素*/
       .zhibo {
         position: relative;
-        left: 68px;
-        width: 40px;
-        height: 15px;
-        top: -103px;
+        left: 4.25rem;
+        width: 2.5rem;
+        height: 0.9375rem;
+        top: -6.4375rem;
         background-color: #e54d42;
-        border-radius: 12px;
+        border-radius: 0.75rem;
         color: #dadada;
         text-align: center;
-        font-size: 1px;
+        font-size: 0.0625rem;
       }
       img {
         width: 100%;
@@ -289,10 +289,10 @@ export default {
   margin-right: 5%;
   margin-top: 11%;
   p {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #333333;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
   .img-box {
     display: flex;
@@ -300,36 +300,36 @@ export default {
     flex-wrap: wrap;
     button {
       margin: auto;
-      width: 155px;
-      height: 42px;
+      width: 9.6875rem;
+      height: 2.625rem;
       display: flex;
-      border-radius: 16px;
+      border-radius: 1rem;
       background: transparent; /*按钮背景透明*/
-      border: 1px #bcbcbc solid;
-      font-size: 15px;
+      border: 0.0625rem #bcbcbc solid;
+      font-size: 0.9375rem;
       align-items: center;
       span {
         margin-left: 24%;
       }
       img {
-        height: 25px;
-        padding-left: 7px;
+        height: 1.5625rem;
+        padding-left: 0.4375rem;
       }
     }
     .contant-box {
-      margin-bottom: 20px;
-      height: 150px;
-      width: 113px;
+      margin-bottom: 1.25rem;
+      height: 9.375rem;
+      width: 7.0625rem;
       span {
-        // padding-top: 12px;
-        font-size: 14px;
+        // padding-top: 0.75rem;
+        font-size: 0.875rem;
         color: #333333;
       }
       .figures {
-        height: 110px;
+        height: 6.875rem;
         width: 100%;
-        border-radius: 13px;
-        margin-bottom: 12px;
+        border-radius: 0.8125rem;
+        margin-bottom: 0.75rem;
         img {
           width: 100%;
         }
@@ -338,62 +338,62 @@ export default {
   }
   .fine {
     display: flex;
-    margin-top: 28px;
+    margin-top: 1.75rem;
     position: relative;
     width: 100%;
 
     .mogin1 {
       // position: absolute;
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 500;
       color: #333333;
     }
     .mogin {
-      // margin-right: 10px;
+      // margin-right: 0.625rem;
       position: absolute;
       right: 0%;
       color: #a9a9a9;
-      font-size: 13px;
+      font-size: 0.8125rem;
     }
   }
   .fine-img {
     display: flex;
-    margin-top: 18px;
+    margin-top: 1.125rem;
     .fineimg-one {
       width: 48%;
-      height: 140px;
-      // padding-right: 15px;
+      height: 8.75rem;
+      // padding-right: 0.9375rem;
       margin-right: 2%;
-      padding-left: 0px;
+      padding-left: 0rem;
       p {
-        padding-top: 10px;
-        font-size: 15px;
+        padding-top: 0.625rem;
+        font-size: 0.9375rem;
         color: #333333;
         font-weight: 500;
       }
       span {
-        font-size: 11px;
+        font-size: 0.6875rem;
         color: #666666;
-        padding-top: 8px;
+        padding-top: 0.5rem;
       }
       .imgbox {
         display: inline-block;
-        margin-top: -22px;
+        margin-top: -1.375rem;
         width: 100%;
-        // height: 130px;
+        // height: 8.125rem;
         .jinri {
           position: relative;
-          left: 0px;
-          top: 34px;
-          width: 56px;
+          left: 0rem;
+          top: 2.125rem;
+          width: 3.5rem;
           height: 0;
           float: left;
-          // margin-right: 20px;
-          border: 12px solid #d93427;
+          // margin-right: 1.25rem;
+          border: 0.75rem solid #d93427;
           border-right-color: transparent;
-          font-size: 7px;
+          font-size: 0.4375rem;
           color: #fff;
-          line-height: 3px;
+          line-height: 0.1875rem;
         }
       }
       img {
@@ -404,27 +404,27 @@ export default {
   }
   .hot{
     display: flex;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     width: 100%;
     .leftimg{
       width: 79%;
-      height: 160px;
+      height: 10rem;
       img{
         height: 100%;
       }
     }
     .description{
-      padding-left: 16px;
+      padding-left: 1rem;
       display: flex;
       flex-direction: column;
 
       p{
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 500;
         color: #333333;
       }
       span{
-        font-size: 11px;
+        font-size: 0.6875rem;
         color: #666666;
         text-indent:1em;
         
@@ -435,15 +435,15 @@ export default {
         position: relative;
         .play-one{
           position: absolute;
-          bottom:8px;
+          bottom:0.5rem;
         color: #666666;
-          left: 2px;
+          left: 0.125rem;
         }
         .play-two{
           position: absolute;
-          bottom: 8px;
+          bottom: 0.5rem;
         color: #666666;
-          right: 0px;
+          right: 0rem;
         }
       }
     }

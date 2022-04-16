@@ -36,36 +36,36 @@ export default {
 </script>
 <style lang="less" scoped>
 /deep/.el-carousel__button{
-  width: 6px;
-  height: 6px;
+  width: 0.375rem;
+  height: 0.375rem;
   border-radius: 50%;
 }
 header{
-  height: 50px;
+  height: 3.125rem;
   width: 100%;
   display: flex;
   align-items: center;
   .logo{
     margin-left: 3%;
-    height: 28px;
-    width: 28px;
+    height: 1.75rem;
+    width: 1.75rem;
     border-radius: 50%;
     img{
       height: 100%;
     }
   }
   input{
-    height: 28px;
+    height: 1.75rem;
     width: 64%;
     margin-left: 4%;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
     background-color: #F5F5F5;
-    border: 1px #F5F5F5 solid;
+    border: 0.0625rem #F5F5F5 solid;
     text-align: center;
   }
   .button{
-    height: 28px;
-    width: 28px;
+    height: 1.75rem;
+    width: 1.75rem;
     margin-left: 5%;
      img{
        width: 100%;
@@ -78,14 +78,14 @@ header{
 
  /deep/.el-tabs__item{
    color: #333333;
-   font-size: 16px;
+   font-size: 1rem;
    font-weight: 600;
 
    &:hover{
    color: #333333;
-   font-size: 19px;
+   font-size: 1.1875rem;
    font-weight: 600;
-  //  border-bottom: 2px #5FCBB0 solid;
+  //  border-bottom: 0.125rem #5FCBB0 solid;
    }
  }
  /deep/.el-tabs__item.is-active{

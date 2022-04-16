@@ -75,7 +75,7 @@
           </div>
           <span>活动中心</span>
         </div>
-        <div class="my">
+        <div class="my" @click="welfare">
           <div class="myimg">
             <img src="../assets/img/about/hongbao.png" alt="" />
           </div>
@@ -218,6 +218,9 @@ export default {
     jvenver(){
       this.$router.push("/Juvenile")
 
+    },
+    welfare(){
+      this.$router.push("/Welfare")
     }
   }
 };
@@ -228,16 +231,16 @@ export default {
   display: flex;
   align-items: center;
   span {
-    margin-top: -10px;
-    margin-left: 9px;
-    font-size: 13px;
+    margin-top: -0.625rem;
+    margin-left: 0.5625rem;
+    font-size: 16px;
   }
   .imgbox {
-    height: 50px;
+    height: 3.125rem;
     margin-left: 10%;
-    width: 50px;
+    width: 3.125rem;
     border-radius: 50%;
-    margin-top: -10px;
+    margin-top: -0.625rem;
     img {
       width: 100%;
     }
@@ -248,63 +251,63 @@ export default {
 }
 .vip {
   position: relative;
-  top: -42px;
+  top: -2.625rem;
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
-  border-radius: 12px;
-  height: 100px;
+  border-radius: 0.75rem;
+  height: 6.25rem;
   background-color: #e2be82;
   p {
     position: absolute;
-    top: 60px;
-    left: 22px;
-    font-size: 12px;
+    top: 3.75rem;
+    left: 1.375rem;
+    font-size: 0.75rem;
   }
   button {
     position: absolute;
-    width: 110px;
-    font-size: 17px;
-    height: 40px;
-    right: 16px;
+    width: 6.875rem;
+    font-size: 1.0625rem;
+    height: 2.5rem;
+    right: 1rem;
     color: #ffffff;
     top: 30%;
     border: none;
-    border-radius: 17px;
+    border-radius: 1.0625rem;
     background-color: #c39e67;
   }
   .vip-box {
     display: flex;
     position: absolute;
-    top: 19px;
-    left: 22px;
+    top: 1.1875rem;
+    left: 1.375rem;
     align-items: center;
     h1 {
-      font-size: 36px;
+      font-size: 2.25rem;
       color: #64491e;
       font-weight: 600;
     }
     span {
-      height: 20px;
-      width: 70px;
+      height: 1.25rem;
+      width: 4.375rem;
       background-color: #c39e67;
       color: #ffffff;
-      font-size: 15px;
-      line-height: 18px;
+      font-size: 0.9375rem;
+      line-height: 1.125rem;
       text-align: center;
-      border-radius: 6px;
-      margin-left: 14px;
+      border-radius: 0.375rem;
+      margin-left: 0.875rem;
     }
   }
 }
 /deep/.el-divider--vertical {
   height: 2em;
-  margin-top: -48px;
+  margin-top: -3rem;
   background-color: #333333;
 }
 /deep/.el-carousel__button {
-  width: 6px;
-  height: 6px;
+  width: 0.375rem;
+  height: 0.375rem;
   border-radius: 50%;
 }
 .wrap {
@@ -322,19 +325,19 @@ export default {
     background-color: #ffffff;
     .purse {
       display: flex;
-      height: 65px;
+      height: 4.0625rem;
       align-items: center;
       display: flex;
         .jiantou{
-        margin-right: 0px;
+        margin-right: 0rem;
         text-align:center;
-        left: 76px;
+        left: 4.75rem;
         position: relative;
-        // outline: 1px black solid;
+        // outline: 0.0625rem black solid;
       }
       .imgbox {
-        height: 30px;
-        width: 30px;
+        height: 1.875rem;
+        width: 1.875rem;
         border-radius: 50%;
         margin-left: 7%;
         img {
@@ -343,9 +346,9 @@ export default {
       }
     
       span {
-        // outline: 1px black solid;
+        // outline: 0.0625rem black solid;
         color: #333333;
-        width: 100px;
+        width: 6.25rem;
         padding-left: 7%;
       }
     }
@@ -354,21 +357,21 @@ export default {
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
-    height: 80px;
+    height: 5rem;
     display: flex;
     align-items: center;
     .logo {
-      height: 25px;
-      width: 25px;
+      height: 1.5625rem;
+      width: 1.5625rem;
       border-radius: 50%;
       img {
         width: 100%;
       }
     }
     .logo1 {
-      height: 40px;
-      margin-top: 6px;
-      width: 40px;
+      height: 2.5rem;
+      margin-top: 0.375rem;
+      width: 2.5rem;
       border-radius: 50%;
       margin-left: 4%;
       img {
@@ -376,9 +379,9 @@ export default {
       }
     }
     button {
-      height: 25px;
-      width: 80px;
-      border-radius: 16px;
+      height: 1.5625rem;
+      width: 5rem;
+      border-radius: 1rem;
       border: none;
       background-color: #b9d5ce;
       margin-left: 57%;
@@ -386,14 +389,14 @@ export default {
       img {
         height: 75%;
         width: 24%;
-        margin: 3px;
+        margin: 0.1875rem;
       }
       span {
-        margin-top: 3px;
-        margin-left: 6px;
-        // line-height: -40px;
+        margin-top: 0.1875rem;
+        margin-left: 0.375rem;
+        // line-height: -2.5rem;
         color: #333333;
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
   }
@@ -403,12 +406,12 @@ export default {
     margin-right: 5%;
     width: 90%;
     display: flex;
-    height: 100px;
-    margin-top: 5px;
+    height: 6.25rem;
+    margin-top: 0.3125rem;
     align-items: center;
     .avatar {
-      height: 70px;
-      width: 70px;
+      height: 4.375rem;
+      width: 4.375rem;
       border-radius: 50%;
       img {
         width: 100%;
@@ -419,57 +422,57 @@ export default {
     }
     .name {
       margin-left: 6%;
-      height: 60px;
-      line-height: 27px;
+      height: 3.75rem;
+      line-height: 1.6875rem;
 
       p {
-        padding-top: 7px;
-        font-size: 21px;
+        padding-top: 0.4375rem;
+        font-size: 1.3125rem;
       }
       .grade {
         display: flex;
         align-items: center;
-        margin-top: 5px;
+        margin-top: 0.3125rem;
         .dnegji {
-          width: 40px;
-          height: 17px;
+          width: 2.5rem;
+          height: 1.0625rem;
           background-color: #a8a8a8;
-          border-radius: 13px;
-          font-size: 5px;
+          border-radius: 0.8125rem;
+          font-size: 0.3125rem;
           text-align: center;
-          line-height: 17px;
+          line-height: 1.0625rem;
           color: #ffffff;
         }
         .star {
-          margin-left: 10px;
+          margin-left: 0.625rem;
           color: #c39e67;
-          font-size: 13px;
+          font-size: 0.8125rem;
           font-family: "PingFangSC-Regular";
         }
       }
     }
   }
   .purchase {
-    margin-top: -2px;
+    margin-top: -0.125rem;
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
-    height: 135px;
+    height: 8.4375rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     .nubmberbox {
       display: flex;
       flex-direction: column;
-      margin-top: -60px;
+      margin-top: -3.75rem;
       p {
-        margin-top: 14px;
-        font-size: 16px;
+        margin-top: 0.875rem;
+        font-size: 1rem;
       }
     }
   }
   .abountme {
-    height: 240px;
+    height: 15rem;
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
@@ -477,12 +480,12 @@ export default {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: -27px;
+    margin-top: -1.6875rem;
     .my {
       width: 25%;
       .myimg {
-        height: 40px;
-        width: 40px;
+        height: 2.5rem;
+        width: 2.5rem;
         border-radius: 50%;
         padding-left: 18%;
         img {
@@ -490,16 +493,16 @@ export default {
         }
       }
       span {
-        // outline: 1px black solid;
-        line-height: 40px;
-        font-size: 13px;
+        // outline: 0.0625rem black solid;
+        line-height: 2.5rem;
+        font-size: 0.8125rem;
         padding-left: 13%;
       }
     }
   }
   .blac-o {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
 }
 </style>

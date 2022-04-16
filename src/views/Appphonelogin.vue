@@ -45,32 +45,32 @@ export default {
   .enroll {
     span {
       font-family: "PingFangSC-Regular";
-      font-size: 17px;
+      font-size: 1.0625rem;
       font-weight: 600;
     }
     margin-left: 18%;
     text-align: center;
     .oneLine {
       background-color: #333333;
-      height: 4px;
-      width: 36px;
+      height: 0.25rem;
+      width: 2.25rem;
       margin: auto;
-      margin-top: 10px;
+      margin-top: 0.625rem;
     }
   }
   .logn {
     margin-left: 18%;
     span {
       font-family: "PingFangSC-Regular";
-      font-size: 17px;
+      font-size: 1.0625rem;
       font-weight: 600;
     }
     .Line {
       background-color: #333333;
-      height: 4px;
-      width: 36px;
+      height: 0.25rem;
+      width: 2.25rem;
       margin: auto;
-      margin-top: 10px;
+      margin-top: 0.625rem;
     }
   }
 }

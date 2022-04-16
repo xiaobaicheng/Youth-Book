@@ -1,8 +1,12 @@
 <template>
   <div class="content">
-    <router-view />
+    <div v-if="$route.meta.keepAlive">
+     
+      　　　　　　<router-view />
+       <Appnaw />
+    </div>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
-  <div id="deck"><Appnaw></Appnaw></div>
 </template>
 <script>
 import Appnaw from "./components/Appnaw/Appnaw.vue";
