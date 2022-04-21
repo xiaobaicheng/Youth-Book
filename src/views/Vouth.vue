@@ -1,5 +1,5 @@
 <template>
-  <el-carousel height="900px" :loop="loop" :autoplay="autoplay">
+  <el-carousel height="800px" :loop="loop" :autoplay="autoplay">
     <el-carousel-item>
       <button @click="skipopen">跳过</button>
       <div class="Listening">
@@ -78,19 +78,19 @@ export default {
   margin-left: 3%;
   margin-right: 3%;
   background: url(../assets/img/beew.png) no-repeat center;
-  background-size: 100% 94%;
+  background-size: 100% 98%;
   position: absolute;
   /deep/&:nth-child(4) {
     background: url(../assets/img/wqwq.png) no-repeat center;
-    background-size: 100% 94%;
+    background-size: 100% 98%;
   }
   /deep/&:nth-child(5) {
     background: url(../assets/img/yingdao.png) no-repeat center;
-    background-size: 100% 94%;
+    background-size: 100% 98%;
   }
   /deep/&:nth-child(6) {
     background: url(../assets/img/wqwqwqw.png) no-repeat center;
-    background-size: 100% 94%;
+    background-size: 100% 98%;
     .Skip{
       // margin-left: 15%;
     }
@@ -123,7 +123,7 @@ export default {
   .Listening {
     position: relative;
     top: 74%;
-    left: 14%;
+    left: 13%;
     h1 {
       font-size: 40px;
       color: #531c13;

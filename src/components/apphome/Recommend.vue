@@ -319,10 +319,10 @@ export default {
     .contant-box {
       margin-bottom: 1.25rem;
       height: 9.375rem;
-      width: 7.0625rem;
+      width: 6.0625rem;
       span {
         // padding-top: 0.75rem;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         color: #333333;
       }
       .figures {

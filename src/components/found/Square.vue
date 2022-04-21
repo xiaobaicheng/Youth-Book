@@ -243,7 +243,7 @@ header {
     }
     span {
       margin-left: 14%;
-      font-size: 0.32em;
+      font-size: 0.12em;
       color: #00cac1;
       padding-right: -10px;
     }
@@ -306,8 +306,8 @@ header {
         margin-top: 10px;
         span {
           font-size: 10px;
-          margin-left: 12px;
-          margin-top: -1px;
+          margin-left: 10px;
+          margin-top: 1px;
           color: #999999;
         }
         div {

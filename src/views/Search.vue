@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="purue" @click="returnabount">
+    <div class="purue" @click="returnHome">
       <img src="../assets/img/setup.png" alt="" />
     </div>
     <el-input v-model="Searchinput" placeholder="请输入内容"></el-input>
@@ -50,6 +50,11 @@ export default {
       Searchinput: "",
     };
   },
+  methods:{
+    returnHome(){
+      this.$router.push("/")
+    }
+  }
 };
 </script>
 <style lang="less" scoped>
@@ -67,8 +72,8 @@ header {
   margin-top: 40px;
 }
 .purue {
-  height: 20px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
   border-radius: 50%;
   img {
     width: 100%;

@@ -142,8 +142,8 @@ header {
   display: flex;
   align-items: center;
   .purue {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     border-radius: 50%;
     img{
       width: 100%;

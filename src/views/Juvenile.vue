@@ -51,8 +51,8 @@ header {
   margin-top: 2.5rem;
 }
 .purue {
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.125rem;
+  width: 1.125rem;
   border-radius: 50%;
   img {
     width: 100%;

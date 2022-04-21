@@ -13,7 +13,6 @@ const routes = [
   {
     path: '/bookshelf',
     name: 'bookshelf',
-
     component: () => import(/* webpackChunkName: "about" */ '../views/Bookshelf.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
@@ -74,7 +73,15 @@ const routes = [
       keepAlive: false//导航栏在该页面不予显示
     }
   },
+  {
+    path: '/Radio',
+    name: 'Radio',
 
+    component: () => import(/* webpackChunkName: "about" */ '../views/Radio.vue'),
+    meta: {
+      keepAlive: false//导航栏在该页面不予显示
+    }
+  },
   {
     path: '/Vouth',
     name: 'Vouth',
