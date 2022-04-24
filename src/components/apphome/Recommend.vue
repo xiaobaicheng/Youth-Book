@@ -80,40 +80,47 @@
     </div>
     <div class="hot">
       <div class="leftimg">
-        <img src="../../assets/img/home/santi.png" alt="">
+        <img src="../../assets/img/home/santi.png" alt="" />
       </div>
       <div class="description">
         <p>三体*多人有声剧*第51届日本星云赏获...</p>
-        <span>【给岁月以文明，而不是给文明以岁月】《三体》多人有声剧，重磅来袭！</span>
+        <span
+          >【给岁月以文明，而不是给文明以岁月】《三体》多人有声剧，重磅来袭！</span
+        >
         <div class="play">
           <span class="play-one">889万人播放</span>
           <span class="play-two">已完结</span>
-        </div> 
+        </div>
       </div>
     </div>
-        <div class="hot">
+    <div class="hot">
       <div class="leftimg">
-        <img src="../../assets/img/home/sasa.png" alt="">
+        <img src="../../assets/img/home/sasa.png" alt="" />
       </div>
       <div class="description">
         <p>全职高手广播剧第一季 上</p>
-        <span>散人君莫笑在荣耀第十区为所欲为！公众会：君莫笑又来了！大家快跑啊！</span>
+        <span
+          >散人君莫笑在荣耀第十区为所欲为！公众会：君莫笑又来了！大家快跑啊！</span
+        >
         <div class="play">
           <span class="play-one">1998万人播放</span>
           <span class="play-two">已完结</span>
-        </div> 
+        </div>
       </div>
-    </div>    <div class="hot">
+    </div>
+    <div class="hot">
       <div class="leftimg">
-        <img src="../../assets/img/home/canci.png" alt="">
+        <img src="../../assets/img/home/canci.png" alt="" />
       </div>
       <div class="description">
         <p>残次品 第四季</p>
-        <span>“他们仍然是这漫无边际的荒原之上，一点星星之火。”瞬心文化出品，改编priest...</span>
+        <span
+          >“他们仍然是这漫无边际的荒原之上，一点星星之火。”瞬心文化出品，改编priest...</span
+        >
         <div class="play">
           <span class="play-one">3924.7万人播放</span>
           <span class="play-two">已完结</span>
-        </div> 
+        </div>
       </div>
     </div>
   </div>
@@ -210,11 +217,9 @@ export default {
   line-height: 9.375rem;
   margin: 0;
 }
-
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
 }
-
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
@@ -245,7 +250,6 @@ export default {
     }
   }
 }
-
 .div {
   overflow: hidden;
   height: 7.375rem;
@@ -341,7 +345,6 @@ export default {
     margin-top: 1.75rem;
     position: relative;
     width: 100%;
-
     .mogin1 {
       // position: absolute;
       font-size: 1.25rem;
@@ -402,47 +405,45 @@ export default {
       }
     }
   }
-  .hot{
+  .hot {
     display: flex;
     margin-top: 1.25rem;
     width: 100%;
-    .leftimg{
+    .leftimg {
       width: 79%;
       height: 10rem;
-      img{
+      img {
         height: 100%;
       }
     }
-    .description{
+    .description {
       padding-left: 1rem;
       display: flex;
       flex-direction: column;
-
-      p{
+      p {
         font-size: 0.75rem;
         font-weight: 500;
         color: #333333;
       }
-      span{
+      span {
         font-size: 0.6875rem;
         color: #666666;
-        text-indent:1em;
-        
+        text-indent: 1em;
       }
-      .play{
+      .play {
         display: flex;
         padding-bottom: 42%;
         position: relative;
-        .play-one{
-          position: absolute;
-          bottom:0.5rem;
-        color: #666666;
-          left: 0.125rem;
-        }
-        .play-two{
+        .play-one {
           position: absolute;
           bottom: 0.5rem;
-        color: #666666;
+          color: #666666;
+          left: 0.125rem;
+        }
+        .play-two {
+          position: absolute;
+          bottom: 0.5rem;
+          color: #666666;
           right: 0rem;
         }
       }

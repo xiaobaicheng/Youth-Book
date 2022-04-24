@@ -1,5 +1,4 @@
 <template>
-<hr>
   <div class="nav">
     <div class="naw-one">
       <router-link to="/">
@@ -57,10 +56,13 @@ background-color: #85E0C8;
 .nav {
   justify-content: space-between;
   display: flex;
-  margin-left: 5%;
+  margin-left: 1%;
   height: 100px;
-  width: 90%;
-  margin-right: 5%;
+  position: fixed;
+  bottom: 0;
+  width: 98%;
+  background-color: #fff;
+  margin-right: 7%;
   .naw-one {
     padding-left: 2%;
     padding-bottom: 20px;

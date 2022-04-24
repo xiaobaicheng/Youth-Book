@@ -1,9 +1,10 @@
 <template>
   <div class="content">
     <div v-if="$route.meta.keepAlive">
-     
-      　　　　　　<router-view />
-       <Appnaw />
+      <router-view />
+      <div class="taber">
+        <Appnaw />
+      </div>
     </div>
     <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
@@ -27,6 +28,9 @@ export default {
   // position: fixed;
   bottom: 0;
   width: 100%;
+}
+.taber {
+  margin-top: 100px;
 }
 </style>>
 

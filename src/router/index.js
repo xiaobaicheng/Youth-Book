@@ -11,6 +11,14 @@ const routes = [
     },
   },
   {
+    path: '/ColumnSquare',
+    name: 'ColumnSquare',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ColumnSquare.vue'),
+    meta: {
+      keepAlive: true//导航栏在该页面显示
+    },
+  },
+  {
     path: '/bookshelf',
     name: 'bookshelf',
     component: () => import(/* webpackChunkName: "about" */ '../views/Bookshelf.vue'),
@@ -96,6 +104,15 @@ const routes = [
     name: 'Authorization',
 
     component: () => import('../views/Authorization.vue'),
+    meta: {
+      keepAlive: false//导航栏在该页面不予显示
+    }
+  },
+  {
+    path: '/Character',
+    name: 'Character',
+
+    component: () => import('../views/Character.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }

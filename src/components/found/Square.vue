@@ -2,7 +2,7 @@
   <div>
     <header>
       <div class="column">
-        <div class="imgbox">
+        <div class="imgbox" @click="Column">
           <img src="../../assets/img/found/found1.png" alt="" />
         </div>
         <span>专栏</span>
@@ -58,15 +58,15 @@
   <div class="series">
     <div class="series-one">
       <p>神系列</p>
-      <span>精彩章节小说配音 </span>
+      <div class="qwqwq">精彩章节小说配音</div>
     </div>
     <div class="series-one">
       <p>活动中心</p>
-      <span class="qwqwq">栏娘征稿第四期来啦 </span>
+      <div class="qwqwq" id="two">栏娘征稿第四期来啦</div>
     </div>
     <div class="series-one">
       <p>游戏中心</p>
-      <span class="wqwq">好玩有趣 </span>
+      <div class="qwqwq" id="paly">好玩有趣</div>
     </div>
   </div>
   <div class="recommend">
@@ -83,67 +83,69 @@
     </div>
   </div>
   <div class="dub">
-    <div class="dub-box">
-      <div class="imgbox">
-        <img src="../../assets/img/found/baijin.png" alt="" />
-      </div>
-      <div class="zhangjie">
-        <span>阅文精品IP：偷偷藏不住</span>
-        <div class="smellimg">
-          <div class="idsds">
-            <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
-          </div>
+    <div class="dub-left">
+      <div class="dub-box">
+        <div class="imgbox">
+          <img src="../../assets/img/found/baijin.png" alt="" />
+        </div>
+        <div class="zhangjie">
+          <span>阅文精品IP：偷偷藏不住</span>
+          <div class="smellimg">
+            <div class="idsds">
+              <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
+            </div>
 
-          <span>精彩章节小说配音</span>
-          <div>☆93w</div>
+            <span>精彩章节小说配音</span>
+            <div>☆93w</div>
+          </div>
+        </div>
+      </div>
+      <div class="dub-box">
+        <div class="imgbox">
+          <img src="../../assets/img/found/xusheng.png" alt="" />
+        </div>
+        <div class="zhangjie">
+          <span>阅文精品IP：偷偷藏不住</span>
+          <div class="smellimg">
+            <div class="idsds">
+              <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
+            </div>
+
+            <span>精彩章节小说配音</span>
+            <div>☆93w</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="dub-box dub-boxone">
-      <div class="imgbox">
-        <img src="../../assets/img/found/baijin.png" alt="" />
-      </div>
-      <div class="zhangjie">
-        <span>阅文精品IP：偷偷藏不住</span>
-        <div class="smellimg">
-          <div class="idsds">
-            <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
-          </div>
+    <div class="dub-left">
+      <div class="dub-box">
+        <div class="imgbox">
+          <img src="../../assets/img/found/taozhi.png" alt="" />
+        </div>
+        <div class="zhangjie">
+          <span>阅文精品IP：偷偷藏不住</span>
+          <div class="smellimg">
+            <div class="idsds">
+              <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
+            </div>
 
-          <span>精彩章节小说配音</span>
-          <div>☆93w</div>
+            <span>精彩章节小说配音</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="dub-box">
-      <div class="imgbox">
-        <img src="../../assets/img/found/baijin.png" alt="" />
-      </div>
-      <div class="zhangjie">
-        <span>阅文精品IP：偷偷藏不住</span>
-        <div class="smellimg">
-          <div class="idsds">
-            <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
-          </div>
-
-          <span>精彩章节小说配音</span>
-          <div>☆93w</div>
+      <div class="dub-box">
+        <div class="imgbox">
+          <img src="../../assets/img/found/like.png" alt="" />
         </div>
-      </div>
-    </div>
-    <div class="dub-box">
-      <div class="imgbox">
-        <img src="../../assets/img/found/baijin.png" alt="" />
-      </div>
-      <div class="zhangjie">
-        <span>阅文精品IP：偷偷藏不住</span>
-        <div class="smellimg">
-          <div class="idsds">
-            <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
-          </div>
+        <div class="zhangjie">
+          <span>阅文精品IP：偷偷藏不住</span>
+          <div class="smellimg">
+            <div class="idsds">
+              <img src="../../assets/img/found/5e79589e112c2407.png" alt="" />
+            </div>
 
-          <span>精彩章节小说配音</span>
-          <div>☆93w</div>
+            <span>精彩章节小说配音</span>
+          </div>
         </div>
       </div>
     </div>
@@ -153,6 +155,14 @@
 <script>
 export default {
   name: "Square",
+  data(){
+    return{}
+  },
+  methods:{
+    Column(){
+      this.$router.push("/ColumnSquare")
+    }
+  }
 };
 </script>
 
@@ -190,7 +200,6 @@ header {
 .antaion {
   display: flex;
   position: relative;
-  // text-align: center;
   margin-top: 14%;
   margin-left: -43%;
 
@@ -201,12 +210,8 @@ header {
     height: 20px;
     background-color: #ffe4e7;
     color: #f11e40;
-
-    // margin-top: 20px;
-    // margin-left: -170px;
   }
   span {
-    // position: absolute;
     margin-left: 14px;
     color: rgb(22, 21, 21);
     font-size: 13px;
@@ -220,6 +225,7 @@ header {
   .series-one {
     width: 31%;
     height: 70px;
+    text-align: left;
     border-radius: 13px;
     background-color: #e5fffd;
     &:nth-child(2) {
@@ -228,22 +234,23 @@ header {
     &:nth-child(3) {
       background-color: #d8e5fe;
     }
-    line-height: 20px;
+    line-height: 16px;
     p {
       margin-top: 10%;
       font-size: 14px;
 
       margin-left: 14%;
     }
-    .wqwq {
+    #paly {
       color: #6a97fd;
     }
-    .qwqwq {
+    #two {
       color: #fea42b;
     }
-    span {
+    .qwqwq {
+      margin-top: 5px;
       margin-left: 14%;
-      font-size: 0.12em;
+      font-size: 1px;
       color: #00cac1;
       padding-right: -10px;
     }
@@ -280,74 +287,74 @@ header {
 .dub {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  .dub-box {
-    width: 48%;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    margin-bottom: 10px;
-    // &:nth-child(4){
-    //   margin-top: -100px;
-    // }
-    .zhangjie {
-      position: relative;
-      height: 80px;
-      margin-top: -70px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #f0f6fc;
-      .smellimg {
+  .dub-left {
+    .dub-box {
+      width: 97%;
+      border-radius: 18px;
+      // overflow: hidden;
+      margin-bottom: 20px;
+      margin-bottom: 10px;
+      .zhangjie {
+        position: relative;
+        // height: 80px;
+        margin-top: -10px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 90%;
-        margin-top: 10px;
-        span {
-          font-size: 10px;
-          margin-left: 10px;
-          margin-top: 1px;
-          color: #999999;
-        }
-        div {
-          font-size: 10px;
-          margin-left: 2px;
-          color: #999999;
-        }
-        .idsds {
-          height: 14px;
-          width: 14px;
-          img {
+        background-color: #f0f6fc;
+        .smellimg {
+          display: flex;
+          // align-items: center;
+          width: 100%;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          span {
+            font-size: 1px;
+            margin-left: 10px;
+            margin-top: 1px;
+            color: #999999;
+          }
+          div {
+            font-size: 10px;
+            // margin-left: 2px;
+            color: #999999;
+          }
+          .idsds {
+            height: 14px;
+            width: 14px;
+            img {
+              border-radius: 50%;
+            }
             border-radius: 50%;
           }
-          border-radius: 50%;
+        }
+        span {
+          margin-top: 10px;
+          font-size: 15px;
         }
       }
-      span {
-        margin-top: 20px;
-        font-size: 15px;
-      }
-    }
-    .imgbox {
-      width: 100%;
-      position: relative;
-      top: -50px;
-      height: -160px;
-      // background: url(../../assets/img/found/baijin.png)no-repeat center;
-      img {
+      .imgbox {
         width: 100%;
-        height: 120%;
+        // position: relative;
+        top: -30px;
+        // height: -160px;
+        img {
+          width: 100%;
+          // height: 100%;
+        border-radius: 14px;
+
+        }
       }
     }
   }
+
   /deep/.dub-boxone {
-    height:200px;
-    
+    height: 200px;
+
     .zhangjie {
       height: -100px;
     }
-    .imgbox{
+    .imgbox {
       height: -200px;
     }
   }
