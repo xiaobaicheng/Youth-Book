@@ -1,5 +1,5 @@
 <template>
-  <div class="contant">
+  <div class="ewew">
     <div class="wrap">
       <header>
         <div class="logo" @click="setup">
@@ -198,6 +198,7 @@
       </div>
     </div>
   </div>
+  <hr>
 </template>
 
 <script>
@@ -313,8 +314,7 @@ export default {
 .wrap {
   background-color: #4f9684;
 }
-.contant {
-  height: 100%;
+.ewew {
   background-color: #f4f3f3;
 
   .purse-box {
@@ -331,8 +331,7 @@ export default {
         .jiantou{
         margin-right: 0rem;
         text-align:center;
-        left: 4.75rem;
-        position: relative;
+        margin-left: 40%;
         // outline: 0.0625rem black solid;
       }
       .imgbox {

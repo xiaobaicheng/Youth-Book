@@ -20,6 +20,7 @@
     <div v-show="loginShow"><Concern></Concern></div>
     <div v-show="!loginShow"><Square></Square></div>
   </div>
+  <hr>
 </template>
 
 

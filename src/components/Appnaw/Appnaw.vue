@@ -1,41 +1,44 @@
 <template>
   <div class="nav">
     <div class="naw-one">
-      <router-link to="/">
+      <router-link to="/" @click="isShow(0)">
         <div class="imgbox">
-          <img src="../../assets/img/home.png" alt="" />
+          <img
+            :src="taBarActive[0].isshow ? taBarActive[0].img : taBar[0]"
+            alt=""
+          />
         </div>
         <p>首页</p>
       </router-link>
     </div>
     <div class="naw-one">
-      <router-link to="/bookshelf">
+      <router-link to="/bookshelf" @click="isShow(1)">
         <div class="imgbox">
-          <img src="../../assets/img/shujia1.png" alt="" />
+          <img :src="taBarActive[1].isshow ? taBarActive[1].img : taBar[1]" alt="" />
         </div>
         <p>书架</p></router-link
       >
     </div>
     <div class="naw-one">
-      <router-link to="/listenbooks">
+      <router-link to="/listenbooks" @click="isShow(2)">
         <div class="imgbox">
-          <img src="../../assets/img/listen.png" alt="" />
+          <img :src="taBarActive[2].isshow ? taBarActive[2].img : taBar[2]" alt="" />
         </div>
         <p>听书</p></router-link
       >
     </div>
     <div class="naw-one">
-      <router-link to="/found">
+      <router-link to="/found" @click="isShow(3)">
         <div class="imgbox">
-          <img src="../../assets/img/faxian.png" alt="" />
+          <img :src="taBarActive[3].isshow ? taBarActive[3].img : taBar[3]" alt="" />
         </div>
         <p>发现</p></router-link
       >
     </div>
     <div class="naw-one">
-      <router-link to="/about">
+      <router-link to="/about" @click="isShow(4)">
         <div class="imgbox">
-          <img src="../../assets/img/me.png" alt="" />
+          <img :src="taBarActive[4].isshow ? taBarActive[4].img : taBar[4]" alt="" />
         </div>
         <p>我的</p></router-link
       >
@@ -46,23 +49,50 @@
 <script>
 export default {
   name: "Appnaw",
+  data() {
+    return {
+      isshow: false,
+      taBar: [
+        require("../../assets/img/home.png"),
+        require("../../assets/img/书架.png"),
+        require("../../assets/img/listen.png"),
+        require("../../assets/img/faxian.png"),
+        require("../../assets/img/me.png"),
+      ],
+      taBarActive: [
+        { img: require("../../assets/img/home/首页.png"), isshow: true },
+        { img: require("../../assets/img/home/书架.png"), isshow: false },
+        { img: require("../../assets/img/home/耳机.png"), isshow: false },
+        { img: require("../../assets/img/home/发现2.png"), isshow: false },
+        { img: require("../../assets/img/home/我的.png"), isshow: false },
+      ],
+    };
+  },
+  methods: {
+    isShow(index) {
+      this.taBarActive.forEach(v=>{
+        v.isshow = false
+        this.taBarActive[index].isshow = true
+      })
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
-hr{
-background-color: #85E0C8;
+hr {
+  background-color: #85e0c8;
 }
 .nav {
   justify-content: space-between;
   display: flex;
-  margin-left: 1%;
+  // margin-left: 1%;
   height: 100px;
   position: fixed;
   bottom: 0;
-  width: 98%;
+  width: 100%;
   background-color: #fff;
-  margin-right: 7%;
+  // margin-right: 7%;
   .naw-one {
     padding-left: 2%;
     padding-bottom: 20px;
@@ -73,7 +103,7 @@ background-color: #85E0C8;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    p{
+    p {
       font-size: 14px;
       color: #333333;
       padding-top: 10px;

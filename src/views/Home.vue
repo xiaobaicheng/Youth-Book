@@ -18,6 +18,7 @@
     <el-tab-pane label="声音恋人" name="fourth">声音恋人</el-tab-pane>
     <el-tab-pane label="相声评书" name="five">相声评书</el-tab-pane>
   </el-tabs>
+  <hr>
 </template>
 
 <script>

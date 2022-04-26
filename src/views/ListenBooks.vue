@@ -122,9 +122,6 @@ export default {
   
   watch: {
     value1(newName, oldName) {
-     if (oldName == 0) {
-        this.newName +0.1
-     }
       console.log(newName, oldName);
     },
   },
