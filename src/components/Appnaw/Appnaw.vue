@@ -8,7 +8,7 @@
             alt=""
           />
         </div>
-        <p>首页</p>
+        <p :style="taBarActive[0].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">首页</p>
       </router-link>
     </div>
     <div class="naw-one">
@@ -16,7 +16,7 @@
         <div class="imgbox">
           <img :src="taBarActive[1].isshow ? taBarActive[1].img : taBar[1]" alt="" />
         </div>
-        <p>书架</p></router-link
+        <p :style="taBarActive[1].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">书架</p></router-link
       >
     </div>
     <div class="naw-one">
@@ -24,7 +24,7 @@
         <div class="imgbox">
           <img :src="taBarActive[2].isshow ? taBarActive[2].img : taBar[2]" alt="" />
         </div>
-        <p>听书</p></router-link
+        <p :style="taBarActive[2].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">听书</p></router-link
       >
     </div>
     <div class="naw-one">
@@ -32,7 +32,7 @@
         <div class="imgbox">
           <img :src="taBarActive[3].isshow ? taBarActive[3].img : taBar[3]" alt="" />
         </div>
-        <p>发现</p></router-link
+        <p :style="taBarActive[3].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">发现</p></router-link
       >
     </div>
     <div class="naw-one">
@@ -40,7 +40,7 @@
         <div class="imgbox">
           <img :src="taBarActive[4].isshow ? taBarActive[4].img : taBar[4]" alt="" />
         </div>
-        <p>我的</p></router-link
+        <p :style="taBarActive[4].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">我的</p></router-link
       >
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {
         require("../../assets/img/me.png"),
       ],
       taBarActive: [
-        { img: require("../../assets/img/home/首页.png"), isshow: true },
+        { img: require("../../assets/img/home/首页.png"), isshow: false },
         { img: require("../../assets/img/home/书架.png"), isshow: false },
         { img: require("../../assets/img/home/耳机.png"), isshow: false },
         { img: require("../../assets/img/home/发现2.png"), isshow: false },
@@ -68,7 +68,9 @@ export default {
       ],
     };
   },
+ 
   methods: {
+
     isShow(index) {
       this.taBarActive.forEach(v=>{
         v.isshow = false

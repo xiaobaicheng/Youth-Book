@@ -228,6 +228,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+hr{
+    background-color: #98DCCB;
+}
 /deep/.el-carousel__item {
   display: flex;
   align-items: center;
@@ -331,7 +334,7 @@ export default {
         .jiantou{
         margin-right: 0rem;
         text-align:center;
-        margin-left: 40%;
+        margin-left: 25%;
         // outline: 0.0625rem black solid;
       }
       .imgbox {

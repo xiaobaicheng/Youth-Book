@@ -19,6 +19,14 @@ const routes = [
     },
   },
   {
+    path: '/TopicSquare',
+    name: 'TopicSquare',
+    component: () => import(/* webpackChunkName: "about" */ '../views/TopicSquare.vue'),
+    meta: {
+      keepAlive: true//导航栏在该页面显示
+    },
+  },
+  {
     path: '/bookshelf',
     name: 'bookshelf',
     component: () => import(/* webpackChunkName: "about" */ '../views/Bookshelf.vue'),
@@ -75,8 +83,15 @@ const routes = [
   {
     path: '/Search',
     name: 'Search',
-
     component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue'),
+    meta: {
+      keepAlive: false//导航栏在该页面不予显示
+    }
+  },
+  {
+    path: '/Customer',
+    name: 'Customer',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Customer.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }

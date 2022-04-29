@@ -49,6 +49,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+hr{
+    background-color: #98DCCB;
+}
 /deep/.el-carousel__button {
   width: 0.375rem;
   height: 0.375rem;

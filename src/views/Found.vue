@@ -46,6 +46,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+hr{
+    background-color: #98DCCB;
+}
 .broder {
   margin-left: 5%;
   margin-right: 5%;

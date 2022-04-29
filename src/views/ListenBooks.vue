@@ -102,7 +102,7 @@
       <div v-show="!isShow"><Comments></Comments></div>
     </div>
   </div>
-  <hr />
+<hr>
 </template>
 
 <script>
@@ -143,6 +143,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+hr{
+    background-color: #98DCCB;
+}
 .resume {
   display: flex;
   justify-content: space-around;

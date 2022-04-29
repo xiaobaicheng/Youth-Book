@@ -184,7 +184,6 @@
       </div>
     </div>
   </div>
-  <hr>
 </template>
 
 <script>
@@ -337,6 +336,7 @@ export default {
 .wrap {
   margin-left: 4%;
   margin-right: 4%;
+  margin-top: -20px;
 }
 /deep/.el-carousel__button {
   height: 10px;

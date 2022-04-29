@@ -9,7 +9,8 @@
       <el-tab-pane label="女生" name="fourth">全一期</el-tab-pane>
     </el-tabs>
   </div>
-  <div class="content"></div>
+  <!-- <div class="content"></div> -->
+  <hr>
 </template>
 
 <script>
@@ -28,10 +29,9 @@ export default {
 </script>
 <style lang="less" scoped>
 
-// /deep/.el-tabs__content {
-//   margin-left: 4%;
-//   margin-right: 4%;
-// }
+hr{
+    background-color: #98DCCB;
+}
 /deep/.el-tabs__nav-wrap {
   height: 70px;
   background-color: #4f9684;
