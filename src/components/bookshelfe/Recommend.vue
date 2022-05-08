@@ -158,26 +158,29 @@
         <span class="play-one">武侠幻想·完结·47.8万人在读</span>
       </div>
     </div>
-     <div class="hot">
+    <div class="hot">
       <div class="leftimg">
         <img src="../../assets/img/book/wanxiang.png" alt="" />
       </div>
       <div class="description">
         <p>万相之王</p>
         <span
-          >继《斗破苍穹》《武动乾坤》《大主宰》 《元尊》之后，天蚕土豆又一部玄幻力...</span
+          >继《斗破苍穹》《武动乾坤》《大主宰》
+          《元尊》之后，天蚕土豆又一部玄幻力...</span
         >
 
         <span class="play-one">东方玄幻·完结·25.77万人在读</span>
       </div>
-    </div> <div class="hot">
+    </div>
+    <div class="hot">
       <div class="leftimg">
         <img src="../../assets/img/book/yujiao.png" alt="" />
       </div>
       <div class="description">
         <p>驭鲛记</p>
         <span
-          >迪丽热巴，任嘉伦主演影视剧《与君初相 识》原著小说！纪云禾，驭妖谷第一驭...</span
+          >迪丽热巴，任嘉伦主演影视剧《与君初相
+          识》原著小说！纪云禾，驭妖谷第一驭...</span
         >
 
         <span class="play-one">玄幻仙侠·完结·16.7万人在读</span>
@@ -253,7 +256,17 @@ export default {
     Character() {
       this.$router.push("/Character");
     },
+   async getdata() {
+      let { data } = await this.$axios({
+        method:"POST",
+        url:"/root/book",
+      });
+      console.log(data);
+    },
   },
+  created(){
+    this.getdata()
+  }
 };
 </script>
 
@@ -262,12 +275,12 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  .mogin1{
+  .mogin1 {
     font-size: 18px;
   }
-  .mogin{
+  .mogin {
     font-size: 12px;
-    color: #A9A9A9;
+    color: #a9a9a9;
   }
 }
 .hot {

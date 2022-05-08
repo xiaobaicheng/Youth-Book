@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/ColumnSquare',
     name: 'ColumnSquare',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ColumnSquare.vue'),
+    component: () => import( '../views/ColumnSquare.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },
@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/TopicSquare',
     name: 'TopicSquare',
-    component: () => import(/* webpackChunkName: "about" */ '../views/TopicSquare.vue'),
+    component: () => import( '../views/TopicSquare.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },
@@ -29,7 +29,7 @@ const routes = [
   {
     path: '/bookshelf',
     name: 'bookshelf',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Bookshelf.vue'),
+    component: () => import( '../views/Bookshelf.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },
@@ -37,7 +37,7 @@ const routes = [
     path: '/found',
     name: 'found',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Found.vue'),
+    component: () => import( '../views/Found.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },
@@ -45,7 +45,7 @@ const routes = [
     path: '/listenbooks',
     name: 'listenbooks',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListenBooks.vue'),
+    component: () => import( '../views/ListenBooks.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },
@@ -54,7 +54,7 @@ const routes = [
     path: '/Appphonelogin',
     name: 'Appphonelogin',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Appphonelogin.vue'),
+    component: () => import( '../views/Appphonelogin.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -63,10 +63,7 @@ const routes = [
   {
     path: '/Welfare',
     name: 'Welfare',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Welfare.vue'),
+    component: () => import( '../views/Welfare.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -75,7 +72,7 @@ const routes = [
     path: '/Juvenile',
     name: 'Juvenile',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Juvenile.vue'),
+    component: () => import( '../views/Juvenile.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -83,7 +80,7 @@ const routes = [
   {
     path: '/Search',
     name: 'Search',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue'),
+    component: () => import( '../views/Search.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -91,7 +88,7 @@ const routes = [
   {
     path: '/Customer',
     name: 'Customer',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Customer.vue'),
+    component: () => import( '../views/Customer.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -100,7 +97,7 @@ const routes = [
     path: '/Radio',
     name: 'Radio',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Radio.vue'),
+    component: () => import( '../views/Radio.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -109,7 +106,7 @@ const routes = [
     path: '/Vouth',
     name: 'Vouth',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Vouth.vue'),
+    component: () => import( '../views/Vouth.vue'),
     meta: {
       keepAlive: false//导航栏在该页面不予显示
     }
@@ -146,7 +143,7 @@ const routes = [
     path: '/about',
     name: 'About',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import( '../views/About.vue'),
     meta: {
       keepAlive: true//导航栏在该页面显示
     },

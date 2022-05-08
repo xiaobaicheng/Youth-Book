@@ -5,29 +5,31 @@
     ref="loginFrom"
     label-width="100px"
   >
-  <div class="wrap-login">
-    <select>
-      <option value="+86">+86</option>
-      <option value="+19">+19</option>
-      <option value="+19">+19</option>
-      <option value="+19">+19</option>
-    </select>
-   <el-form-item label="" prop="tephone">
+    <div class="wrap-login">
+      <select>
+        <option value="+86">+86</option>
+        <option value="+19">+19</option>
+        <option value="+19">+19</option>
+        <option value="+19">+19</option>
+      </select>
+      <el-form-item label="" prop="tephone">
         <el-input
           type="tel"
           placeholder="请输入你的电话"
           v-model="loginFrom.tephone"
           class="myinput"
-          >
+        >
         </el-input>
       </el-form-item>
-  </div>
-  <div class="Verification">
-  <el-input placeholder="请输入密码" v-model="loginFrom.password" show-password></el-input>
-  </div>
-
+    </div>
+    <div class="Verification">
+      <el-input
+        placeholder="请输入密码"
+        v-model="loginFrom.password"
+        show-password
+      ></el-input>
+    </div>
   </el-form>
-
 
   <div class="UserAgreement">
     <input type="radio" v-model="checked" />
@@ -65,38 +67,36 @@ export default {
   name: "PossLogin",
   data() {
     return {
-    loginFrom: {
+      loginFrom: {
         tephone: "",
-        password:""
+        password: "",
       },
       checked: false,
-       rules: {
+      rules: {
         //form表单里rules属性绑定的对象，用来对表单内控件做格式校验
         tephone: [
           { required: true, message: "请输入你的电话" },
           {
             validator(rule, value, callback) {
-              // validator验证器，可以对格式进行复杂限制，其中有三个参数
-              if ( value.length < 8) {
+              if (value.length < 8) {
                 callback(new Error("请输入大于八位的电话"));
-                //就callback 返回下面这段话
               } else {
                 //字符验证
                 if (/^[1]([3-9])[0-9]{9}$/.test(value)) {
-                  callback(); //调用callback 验证成功
                   console.log("1212");
                 } else {
                   callback(new Error("你输入的电话号码格式有误"));
-                  callback(); //
+                  callback();
                 }
               }
             },
           },
         ],
-    password:[
-      {required:true,message:"请输入你的密码"},{
-        validator(rule,value,callback){
-             if (value.length < 6 || value.length > 18) {
+        password: [
+          { required: true, message: "请输入你的密码" },
+          {
+            validator(rule, value, callback) {
+              if (value.length < 6 || value.length > 18) {
                 callback(new Error("请输入6-18位字符"));
               } else {
                 //字符验证
@@ -107,17 +107,25 @@ export default {
                   callback(); //验证失败
                 }
               }
-        }
-      }
-    ]
+            },
+          },
+        ],
       },
     };
   },
-  methods:{
-    submitLogin(){
-      this.$router.push("/Authorization")
-    }
-  }
+  methods: {
+    async submitLogin() {
+      let { data } = await this.$axios({
+        method: "POST",
+        url: "/root/book",
+        data: {
+          user: this.loginFrom.tephone,
+        },
+      });
+      console.log(data);
+      // this.$router.push("/Authorization")
+    },
+  },
 };
 </script>
 
@@ -136,13 +144,13 @@ export default {
     color: #333333;
     border: 1px #fff solid;
   }
- /deep/.el-input__inner {
+  /deep/.el-input__inner {
     font-size: 14px;
     width: 300px;
     margin-left: -100px;
-    border:none;
-background-color: transparent !important;
-  } 
+    border: none;
+    background-color: transparent !important;
+  }
 }
 .Verification {
   span {

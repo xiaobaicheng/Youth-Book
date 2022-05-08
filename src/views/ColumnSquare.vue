@@ -37,8 +37,10 @@ export default {
   },
   methods: {
    async getdata() {
+    console.log(1);
+
       let { data } = await this.$axios({
-        url: "/getdata/link",
+        url: "/home/groups",
         methods: "GET",
       });
       console.log(data);

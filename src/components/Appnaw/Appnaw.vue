@@ -8,39 +8,81 @@
             alt=""
           />
         </div>
-        <p :style="taBarActive[0].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">首页</p>
+        <p
+          :style="
+            taBarActive[0].isshow ? { color: '#3DA9E1' } : { color: '#33336E' }
+          "
+        >
+          首页
+        </p>
       </router-link>
     </div>
     <div class="naw-one">
       <router-link to="/bookshelf" @click="isShow(1)">
         <div class="imgbox">
-          <img :src="taBarActive[1].isshow ? taBarActive[1].img : taBar[1]" alt="" />
+          <img
+            :src="taBarActive[1].isshow ? taBarActive[1].img : taBar[1]"
+            alt=""
+          />
         </div>
-        <p :style="taBarActive[1].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">书架</p></router-link
+        <p
+          :style="
+            taBarActive[1].isshow ? { color: '#3DA9E1' } : { color: '#33336E' }
+          "
+        >
+          书架
+        </p></router-link
       >
     </div>
     <div class="naw-one">
       <router-link to="/listenbooks" @click="isShow(2)">
         <div class="imgbox">
-          <img :src="taBarActive[2].isshow ? taBarActive[2].img : taBar[2]" alt="" />
+          <img
+            :src="taBarActive[2].isshow ? taBarActive[2].img : taBar[2]"
+            alt=""
+          />
         </div>
-        <p :style="taBarActive[2].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">听书</p></router-link
+        <p
+          :style="
+            taBarActive[2].isshow ? { color: '#3DA9E1' } : { color: '#33336E' }
+          "
+        >
+          听书
+        </p></router-link
       >
     </div>
     <div class="naw-one">
       <router-link to="/found" @click="isShow(3)">
         <div class="imgbox">
-          <img :src="taBarActive[3].isshow ? taBarActive[3].img : taBar[3]" alt="" />
+          <img
+            :src="taBarActive[3].isshow ? taBarActive[3].img : taBar[3]"
+            alt=""
+          />
         </div>
-        <p :style="taBarActive[3].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">发现</p></router-link
+        <p
+          :style="
+            taBarActive[3].isshow ? { color: '#3DA9E1' } : { color: '#33336E' }
+          "
+        >
+          发现
+        </p></router-link
       >
     </div>
     <div class="naw-one">
       <router-link to="/about" @click="isShow(4)">
         <div class="imgbox">
-          <img :src="taBarActive[4].isshow ? taBarActive[4].img : taBar[4]" alt="" />
+          <img
+            :src="taBarActive[4].isshow ? taBarActive[4].img : taBar[4]"
+            alt=""
+          />
         </div>
-        <p :style="taBarActive[4].isshow ? {color:'#3DA9E1'}: {color:'#33336E'}">我的</p></router-link
+        <p
+          :style="
+            taBarActive[4].isshow ? { color: '#3DA9E1' } : { color: '#33336E' }
+          "
+        >
+          我的
+        </p></router-link
       >
     </div>
   </div>
@@ -51,7 +93,6 @@ export default {
   name: "Appnaw",
   data() {
     return {
-      isshow: false,
       taBar: [
         require("../../assets/img/home.png"),
         require("../../assets/img/书架.png"),
@@ -68,20 +109,22 @@ export default {
       ],
     };
   },
- 
-  methods: {
 
+  methods: {
     isShow(index) {
-      this.taBarActive.forEach(v=>{
-        v.isshow = false
-        this.taBarActive[index].isshow = true
-      })
+      this.taBarActive.forEach((v) => {
+        v.isshow = false;
+        this.taBarActive[index].isshow = true;
+      });
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
+.router-link-exact-active {
+  color: hotpink;
+}
 hr {
   background-color: #85e0c8;
 }

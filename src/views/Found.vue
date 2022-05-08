@@ -4,11 +4,11 @@
       <span> 关注</span>
       <div class="oneLine" v-show="show"></div>
     </div>
-    <div class="logn" @click="isShow">
+    <div class="logn" @click="isShow2">
       <span> 广场</span>
       <div class="Line" v-show="!show"></div>
     </div>
-    <div class="purse" v-show="!show">
+    <div class="purse" v-show="!show" @click="search">
       <img src="../assets/img/found/sousuo.png" alt="">
     </div>
     <div v-show="show" class="two">
@@ -17,8 +17,8 @@
     </div>
   </div>
   <div class="centent">
-    <div v-show="loginShow"><Concern></Concern></div>
-    <div v-show="!loginShow"><Square></Square></div>
+    <div v-show="show"><Concern></Concern></div>
+    <div v-show="!show"><Square></Square></div>
   </div>
   <hr>
 </template>
@@ -33,14 +33,18 @@ export default {
   data() {
     return {
       show: false,
-      loginShow: false,
     };
   },
   methods: {
-    isShow() {
-      this.show = !this.show;
-      this.loginShow = !this.loginShow;
+    isShow2 (){
+        this.show = false;
     },
+    isShow() {
+      this.show = true;
+    },
+    search(){
+      this.$router.push("/Search")
+    }
   },
 };
 </script>

@@ -47,15 +47,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// /deep/.el-carousel__indicator--horizontal{
-//   display: flex;
-//   width: 2px;
-// }
 /deep/ .el-carousel__button {
   top: -40px;
   width: 6px;
-  // display: flex;
-  // padding-left: 10px;
   position: absolute;
   background-color: #ebd3bf;
   height: 6px;
@@ -73,7 +67,6 @@ export default {
   margin: 0;
 }
 /deep/.el-carousel__item {
-  // background-color: red;
   width: 94%;
   margin-left: 3%;
   margin-right: 3%;

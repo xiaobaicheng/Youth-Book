@@ -118,7 +118,6 @@ export default {
   },
   methods:{
     retunlisten(){
-      console.log(11);
       this.$router.push("/Bookshelf")
     }
   }

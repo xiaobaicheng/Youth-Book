@@ -1,17 +1,19 @@
 <template>
+  <span class="back" @click="back">&lt;</span>
+
   <div class="broder">
     <div class="enroll" @click="isShow">
       <span> 手机号注册</span>
       <div class="oneLine" v-show="!show"></div>
     </div>
-    <div class="logn" @click="isShow">
+    <div class="logn" @click="isShow2">
       <span> 密码登录</span>
       <div class="Line" v-show="show"></div>
     </div>
   </div>
   <div class="centent">
-    <div v-show="!loginShow"><Enroll></Enroll></div>
-    <div v-show="loginShow"><PossLogin></PossLogin></div>
+    <div v-show="!show"><Enroll></Enroll></div>
+    <div v-show="show"><PossLogin></PossLogin></div>
   </div>
 </template> 
 
@@ -25,21 +27,30 @@ export default {
   data() {
     return {
       show: false,
-      loginShow: false,
     };
   },
   methods: {
     isShow() {
-      this.show = !this.show;
-      this.loginShow = !this.loginShow;
+      this.show = false;
+    },
+    isShow2() {
+      this.show = true;
+    },
+    back() {
+      this.$router.go(-1);
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
+.back {
+  font-size: 30px;
+  line-height: 60px;
+  margin-left: 4%;
+}
 .broder {
-  margin-top: 20%;
+  margin-top: 14%;
   width: 100%;
   display: flex;
   .enroll {

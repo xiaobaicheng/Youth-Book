@@ -8,7 +8,7 @@
     <div class="wrap-login">
       <select>
         <option value="+86">+86</option>
-        <option value="+19">+19</option>
+        <option value="+19">+19</option>  
         <option value="+19">+19</option>
         <option value="+19">+19</option>
       </select>
@@ -18,24 +18,28 @@
           placeholder="请输入你的电话"
           v-model="loginFrom.tephone"
           class="myinput"
-          >
+        >
         </el-input>
       </el-form-item>
     </div>
     <div class="Verification">
       <span>验证码</span>
-      <input type="text" placeholder="请输入验证码" />
+      <input
+        type="text"
+        placeholder="请输入验证码"
+        v-model="loginFrom.validatacode"
+      />
       <span>|</span>
-      <span>获取验证码</span>
+      <span @click="smsSwnd">获取验证码</span>
     </div>
   </el-form>
   <div class="UserAgreement">
-    <input type="radio" v-model="checked" />
+    <input type="checkbox" v-model="checked" />
     <span class="remment"
       >首次登录会自动创建新账号，且代表同意《<span>用户协议</span>》和《<span>隐私政策</span>》</span
     >
   </div>
-  <button class="login">登录</button>
+  <button class="login" @click="submitlogin">登录</button>
   <div class="contant">
     <p class="issue">遇到问题？<span>查看帮助</span></p>
     <div class="third">
@@ -64,26 +68,22 @@
 export default {
   name: "Enroll",
   data() {
-    return {  
+    return {
       loginFrom: {
         tephone: "",
+        validatacode: "",
       },
       checked: false,
-       rules: {
+      rules: {
         //form表单里rules属性绑定的对象，用来对表单内控件做格式校验
         tephone: [
           { required: true, message: "请输入你的电话" },
           {
             validator(rule, value, callback) {
-              // validator验证器，可以对格式进行复杂限制，其中有三个参数
-              if ( value.length < 8) {
+              if (value.length < 8) {
                 callback(new Error("请输入大于八位的电话"));
-                //就callback 返回下面这段话
               } else {
-                //字符验证
                 if (/^[1]([3-9])[0-9]{9}$/.test(value)) {
-                  callback(); //调用callback 验证成功
-                  console.log("1212");
                 } else {
                   callback(new Error("你输入的电话号码格式有误"));
                   callback(); //
@@ -92,9 +92,31 @@ export default {
             },
           },
         ],
-    
       },
     };
+  },
+  methods: {
+    submitlogin() {
+      if (this.checked) {
+        console.log(this.loginFrom);
+      } else {
+        return this.$message.error("请勾选用户协议后再登录");
+      }
+    },
+    async smsSwnd() {
+      console.log(1);
+      let { data } = await this.$axios({
+        method: "POST",
+        url: "/root/smsSend",
+        data: {
+          telephone: this.loginFrom.tephone,
+        },
+      });
+      if (data.statusCode === "200") {
+        this.$message.success("短信验证码获取成功");
+      }
+      console.log(data);
+    },
   },
 };
 </script>
@@ -113,12 +135,12 @@ export default {
     background-color: #fff;
     border: none;
   }
- /deep/.el-input__inner {
+  /deep/.el-input__inner {
     font-size: 14px;
     width: 300px;
     margin-left: -100px;
-    border:none;
-background-color: transparent !important;
+    border: none;
+    background-color: transparent !important;
   }
 }
 .Verification {
@@ -162,7 +184,7 @@ background-color: transparent !important;
   width: 65%;
   input {
     margin-left: 0;
-    // height: 100%;
+    border-radius: 50%;
   }
   .remment {
     margin-left: 10px;

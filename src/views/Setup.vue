@@ -122,7 +122,7 @@ export default {
   },
   methods:{
     returnabount(){
-      this.$router.push("/About")
+      this.$router.go(-1)
     }
   }
 };
