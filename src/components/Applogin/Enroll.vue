@@ -8,7 +8,7 @@
     <div class="wrap-login">
       <select>
         <option value="+86">+86</option>
-        <option value="+19">+19</option>  
+        <option value="+19">+19</option>
         <option value="+19">+19</option>
         <option value="+19">+19</option>
       </select>
@@ -16,7 +16,7 @@
         <el-input
           type="tel"
           placeholder="请输入你的电话"
-          v-model="loginFrom.tephone"
+          v-model="loginFrom.telephone"
           class="myinput"
         >
         </el-input>
@@ -70,14 +70,14 @@ export default {
   data() {
     return {
       loginFrom: {
-        tephone: "",
+        telephone: "",
         validatacode: "",
       },
       checked: false,
       rules: {
         //form表单里rules属性绑定的对象，用来对表单内控件做格式校验
         tephone: [
-          { required: true, message: "请输入你的电话" },
+          // { required: true, message: "请输入你的电话" },
           {
             validator(rule, value, callback) {
               if (value.length < 8) {
@@ -104,14 +104,16 @@ export default {
       }
     },
     async smsSwnd() {
-      console.log(1);
-      let { data } = await this.$axios({
-        method: "POST",
-        url: "/root/smsSend",
-        data: {
-          telephone: this.loginFrom.tephone,
-        },
-      });
+      const {telephone} = "15108272872"
+      console.log(telephone);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+      // const { data } = await this.$axios({
+      //   method: "POST",
+      //   url: "/root/smsSend",
+      //   data: {
+      //     	telephone
+      //   },
+      // });
+      const {data} = await this.$axios.post("/root/smsSend?telephone="+telephone)
       if (data.statusCode === "200") {
         this.$message.success("短信验证码获取成功");
       }

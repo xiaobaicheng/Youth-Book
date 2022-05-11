@@ -116,6 +116,7 @@ export default {
         v.isshow = false;
         this.taBarActive[index].isshow = true;
       });
+  
     },
   },
 };

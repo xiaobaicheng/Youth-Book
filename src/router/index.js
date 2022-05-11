@@ -27,6 +27,14 @@ const routes = [
     },
   },
   {
+    path: '/Admin',
+    name: 'Admin',
+    component: () => import( '../views/Admin.vue'),
+    meta: {
+      keepAlive: true//导航栏在该页面显示
+    },
+  },
+  {
     path: '/bookshelf',
     name: 'bookshelf',
     component: () => import( '../views/Bookshelf.vue'),

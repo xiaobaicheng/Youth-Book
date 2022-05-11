@@ -259,7 +259,7 @@ export default {
    async getdata() {
       let { data } = await this.$axios({
         method:"POST",
-        url:"/root/book",
+        url:"/root/book/Find",
       });
       console.log(data);
     },

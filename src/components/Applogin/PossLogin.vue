@@ -32,7 +32,7 @@
   </el-form>
 
   <div class="UserAgreement">
-    <input type="radio" v-model="checked" />
+    <input type="checkbox" v-model="checked" />
     <span class="remment"
       >首次登录会自动创建新账号，且代表同意《<span>用户协议</span>》和《<span>隐私政策</span>》</span
     >
@@ -117,7 +117,7 @@ export default {
     async submitLogin() {
       let { data } = await this.$axios({
         method: "POST",
-        url: "/root/book",
+        url: "/root/loginPwd",
         data: {
           user: this.loginFrom.tephone,
         },
