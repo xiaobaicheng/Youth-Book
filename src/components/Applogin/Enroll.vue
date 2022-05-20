@@ -96,23 +96,25 @@ export default {
     };
   },
   methods: {
-    submitlogin() {
+   async submitlogin() {
       if (this.checked) {
-        console.log(this.loginFrom);
+      //  http://124.221.168.57:8099/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=499755
+    // http://124.221.168.57:8099/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=499755
+
+      let {telephone,validatacode} = this.loginFrom;
+      console.log(telephone,validatacode);
+      let {data} = await this.$axios({
+        method:"POST",
+        url:`/root/signUpSms?telephoneLogin=${telephone}&verifyCodeLogin=${validatacode}`
+      })
+      console.log(data);
       } else {
         return this.$message.error("请勾选用户协议后再登录");
       }
     },
     async smsSwnd() {
-      const {telephone} = "15108272872"
-      console.log(telephone);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-      // const { data } = await this.$axios({
-      //   method: "POST",
-      //   url: "/root/smsSend",
-      //   data: {
-      //     	telephone
-      //   },
-      // });
+      const {telephone} = this.loginFrom
+      console.log(telephone);
       const {data} = await this.$axios.post("/root/smsSend?telephone="+telephone)
       if (data.statusCode === "200") {
         this.$message.success("短信验证码获取成功");

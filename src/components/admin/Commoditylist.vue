@@ -1,24 +1,18 @@
 <template>
   <div class="book">
-    <input type="text" v-model="book.bookname" placeholder="请输入书单名" />
-    <input type="text" v-model="book.booknr" placeholder="请输入书单内容" />
-    <input type="text" v-model="book.bookUser" placeholder="请输入作者" />
+    <input type="text" v-model="book.bookname" placeholder="请输入名" />
+    <input type="text" v-model="book.booknr" placeholder="请输入价格" />
   </div>
   <el-button type="success" @click="submitbok">提交表单</el-button>
   <el-table :data="bookdata" style="width: 100%">
-    <el-table-column label="书单名" width="110">
+    <el-table-column label="价格" width="110">
       <template #default="scope">
-        <el-input v-model="scope.row.bookName"></el-input>
+        <el-input v-model="scope.row.jiage"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="书单内容" width="120">
+    <el-table-column label="名称" width="80">
       <template #default="scope">
-        <el-input v-model="scope.row.bookNr"></el-input>
-      </template>
-    </el-table-column>
-    <el-table-column label="作者" width="80">
-      <template #default="scope">
-        <el-input v-model="scope.row.bookUser"></el-input>
+        <el-input v-model="scope.row.name"></el-input>
       </template>
     </el-table-column>
     <el-table-column label="操作">
@@ -26,10 +20,9 @@
         <el-button
           size="mini"
           @click="
-            updataActice(scope.row.bookid, {
-              bookName: scope.row.bookName,
-              bookNr: scope.row.bookNr,
-              bookUser: scope.row.bookUser,
+            updataActice(scope.row.id, {
+              name: scope.row.name,
+              jiage: scope.row.jiage,
             })
           "
           type="primary"
@@ -38,7 +31,7 @@
         <el-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.row.bookid)"
+          @click="handleDelete(scope.row.id)"
           id="button"
           >删除</el-button
         >
@@ -49,14 +42,13 @@
 
 <script>
 export default {
-  name: "Book",
+  name: "Commoditylist",
   data() {
     return {
       bookdata: [],
       book: {
         bookname: "",
         booknr: "",
-        bookUser: "",
       },
     };
   },
@@ -64,35 +56,40 @@ export default {
     this.getdata();
   },
   methods: {
+      //全查
     async getdata() {
       let { data } = await this.$axios({
         method: "POST",
-        url: "/root/book/Find",
+        url: "/root/commodity/Find",
       });
       this.bookdata = data;
+      // console.log(this.bookdata);
     },
-    //修改http://124.221.168.57:8099/root/book?bookName=12122121111&bookNr=1&bookUser=1&bookid=15
+    //修改
    async updataActice(id, doc) {
-      const {bookName,bookNr,bookUser}= doc
+      const {name,
+jiage}= doc
      let {data} = await this.$axios({
        method:"PUT",
-       url:`/root/book?bookName=${bookName}&bookNr=${bookNr}&bookUser=${bookUser}&bookid=${id}`
+       url:`/root/commodity?jiage=${jiage}&name=${name}&id=${id}`
      })
      console.log(data);
     },
+    //添加
     async submitbok() {
-      const { bookname, booknr, bookUser } = this.book;
+      const { bookname, booknr, } = this.book;
       let { data } = await this.$axios({
         method: "POST",
-        url: `/root/book?bookName=${bookname}&bookNr=${booknr}&bookUser=${bookUser}`,
+        url: `/root/commodity?jiage=${bookname}&name=${booknr}`,
       });
       console.log(data);
     },
+    //删除
     async handleDelete(id) {
       console.log(id);
       let { data } = await this.$axios({
         methods: "DELETE",
-        url: `/root/book?id=${id}`,
+        url: `/root/commodity?id=${id}`,
       });
       console.log(data);
     },

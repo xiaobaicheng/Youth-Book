@@ -12,4 +12,11 @@ axios.defaults.baseURL="http://124.221.168.57:8099";
 app.config.globalProperties.$axios = axios;
 
 
-app.use(store).use(router).mount('#app')
+app.use(store).use(router).mixin({
+    data(){
+        return{
+            baseURL:'http://124.221.168.57:8099'
+        }
+    }
+})
+.mount('#app')

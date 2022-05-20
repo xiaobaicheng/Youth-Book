@@ -3,6 +3,9 @@
     <input type="text" v-model="book.bookname" placeholder="请输入书单名" />
     <input type="text" v-model="book.booknr" placeholder="请输入书单内容" />
     <input type="text" v-model="book.bookUser" placeholder="请输入作者" />
+    <input type="text" v-model="book.bookLx" placeholder="请输入作者" />
+    <input type="text" v-model="book.bookFeiy" placeholder="请输入作者" />
+    <input type="text" v-model="book.bookPf" placeholder="请输入作者" />
   </div>
   <el-button type="success" @click="submitbok">提交表单</el-button>
   <el-table :data="bookdata" style="width: 100%">
@@ -13,7 +16,17 @@
     </el-table-column>
     <el-table-column label="书单内容" width="120">
       <template #default="scope">
-        <el-input v-model="scope.row.bookNr"></el-input>
+        <el-input v-model="scope.row.bookZt"></el-input>
+      </template>
+    </el-table-column>
+    <el-table-column label="	书籍类型" width="80">
+      <template #default="scope">
+        <el-input v-model="scope.row.bookPx"></el-input>
+      </template>
+    </el-table-column>
+    <el-table-column label="	评分" width="80">
+      <template #default="scope">
+        <el-input v-model="scope.row.bookFeiy"></el-input>
       </template>
     </el-table-column>
     <el-table-column label="作者" width="80">
@@ -21,15 +34,23 @@
         <el-input v-model="scope.row.bookUser"></el-input>
       </template>
     </el-table-column>
+    <el-table-column label="bookZt" width="80">
+      <template #default="scope">
+        <el-input v-model="scope.row.bookPf"></el-input>
+      </template>
+    </el-table-column>
     <el-table-column label="操作">
       <template #default="scope">
         <el-button
           size="mini"
           @click="
-            updataActice(scope.row.bookid, {
+            updataActice(scope.row.id, {
               bookName: scope.row.bookName,
-              bookNr: scope.row.bookNr,
+              bookLx: scope.row.bookPx,
               bookUser: scope.row.bookUser,
+              bookFeiy: scope.row.bookFeiy,
+              bookPf: scope.row.bookPf,
+              bookZt: scope.row.bookZt,
             })
           "
           type="primary"
@@ -38,7 +59,7 @@
         <el-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.row.bookid)"
+          @click="handleDelete(scope.row.id)"
           id="button"
           >删除</el-button
         >
@@ -49,7 +70,7 @@
 
 <script>
 export default {
-  name: "Book",
+  name: "BookList",
   data() {
     return {
       bookdata: [],
@@ -57,6 +78,9 @@ export default {
         bookname: "",
         booknr: "",
         bookUser: "",
+        bookLx: "",
+        bookFeiy: "",
+        bookPf: "",
       },
     };
   },
@@ -64,35 +88,40 @@ export default {
     this.getdata();
   },
   methods: {
+    //全查
     async getdata() {
       let { data } = await this.$axios({
         method: "POST",
-        url: "/root/book/Find",
+        url: "/root/bookuser/Find",
       });
       this.bookdata = data;
+      // console.log(this.bookdata);
     },
-    //修改http://124.221.168.57:8099/root/book?bookName=12122121111&bookNr=1&bookUser=1&bookid=15
-   async updataActice(id, doc) {
-      const {bookName,bookNr,bookUser}= doc
-     let {data} = await this.$axios({
-       method:"PUT",
-       url:`/root/book?bookName=${bookName}&bookNr=${bookNr}&bookUser=${bookUser}&bookid=${id}`
-     })
-     console.log(data);
-    },
-    async submitbok() {
-      const { bookname, booknr, bookUser } = this.book;
+    //修改
+    async updataActice(id, doc) {
+      const { bookName, bookLx, bookUser, bookFeiy, bookPf, bookZt } = doc;
       let { data } = await this.$axios({
-        method: "POST",
-        url: `/root/book?bookName=${bookname}&bookNr=${booknr}&bookUser=${bookUser}`,
+        method: "PUT",
+        url: `/root/bookuser?bookName=${bookName}&bookUser=${bookUser}&bookPf=${bookPf}&bookFeiy=${bookFeiy}&bookLx=${bookLx}&bookZt=${bookZt}&id=${id}`,
       });
       console.log(data);
     },
+    //添加
+    async submitbok() {
+      const { bookname, booknr, bookUser, bookLx, bookFeiy, bookPf } =
+        this.book;
+      let { data } = await this.$axios({
+        method: "POST",
+        url: `/root/bookuser?bookName=${bookname}&bookUser=${bookUser}&bookPf=${booknr}&bookFeiy=${bookFeiy}&bookLx=${bookLx}&bookZt=${bookPf}`,
+      });
+      console.log(data);
+    },
+    //删除
     async handleDelete(id) {
-      console.log(id);
+    //   console.log(id);
       let { data } = await this.$axios({
         methods: "DELETE",
-        url: `/root/book?id=${id}`,
+        url: `/root/bookuser?id=${id}`,
       });
       console.log(data);
     },
