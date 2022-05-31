@@ -322,7 +322,8 @@ hr{
 
   .purse-box {
     // height: 100%;
-    margin-right: 3%;
+    // margin-right: 3%;
+    // margin-left: 3%;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -332,9 +333,9 @@ hr{
       align-items: center;
       display: flex;
         .jiantou{
-        margin-right: 0rem;
+          // position: absolute;
         text-align:center;
-        margin-left: 25%;
+        margin-left: 29%;
         // outline: 0.0625rem black solid;
       }
       .imgbox {

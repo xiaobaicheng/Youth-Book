@@ -120,10 +120,12 @@ export default {
     async handleDelete(id) {
     //   console.log(id);
       let { data } = await this.$axios({
-        methods: "DELETE",
+        method: "DELETE",
         url: `/root/bookuser?id=${id}`,
       });
-      console.log(data);
+          if (data == true) {
+        this.$message.success("删除成功");
+      }
     },
   },
 };

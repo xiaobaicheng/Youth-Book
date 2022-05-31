@@ -117,10 +117,11 @@ export default {
     async submitLogin() {
       let { data } = await this.$axios({
         method: "POST",
-        url: "/root/loginPwd",
-        data: {
-          user: this.loginFrom.tephone,
-        },
+        url: `/root/loginSms?telephoneLogin=19827315228&verifyCodeLogin=461586`,
+        // http://124.221.168.57:8099/root/loginSms?telephoneLogin=19827315228&verifyCodeLogin=181969
+        // data: {
+        //   user: this.loginFrom.tephone,
+        // },
       });
       console.log(data);
       // this.$router.push("/Authorization")

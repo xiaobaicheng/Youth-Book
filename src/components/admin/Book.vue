@@ -72,13 +72,13 @@ export default {
       this.bookdata = data;
     },
     //修改http://124.221.168.57:8099/root/book?bookName=12122121111&bookNr=1&bookUser=1&bookid=15
-   async updataActice(id, doc) {
-      const {bookName,bookNr,bookUser}= doc
-     let {data} = await this.$axios({
-       method:"PUT",
-       url:`/root/book?bookName=${bookName}&bookNr=${bookNr}&bookUser=${bookUser}&bookid=${id}`
-     })
-     console.log(data);
+    async updataActice(id, doc) {
+      const { bookName, bookNr, bookUser } = doc;
+      let { data } = await this.$axios({
+        method: "PUT",
+        url: `/root/book?bookName=${bookName}&bookNr=${bookNr}&bookUser=${bookUser}&bookid=${id}`,
+      });
+      //  console.log(data);
     },
     async submitbok() {
       const { bookname, booknr, bookUser } = this.book;
@@ -86,15 +86,17 @@ export default {
         method: "POST",
         url: `/root/book?bookName=${bookname}&bookNr=${booknr}&bookUser=${bookUser}`,
       });
-      console.log(data);
+      // console.log(data);
     },
     async handleDelete(id) {
       console.log(id);
       let { data } = await this.$axios({
-        methods: "DELETE",
+        method: "DELETE",
         url: `/root/book?id=${id}`,
       });
-      console.log(data);
+      if (data == true) {
+        this.$message.success("删除成功");
+      }
     },
   },
 };

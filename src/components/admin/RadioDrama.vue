@@ -71,7 +71,7 @@ export default {
         url: "/root/radio/Find",
       });
       this.bookdata = data;
-      console.log(this.bookdata);
+      // console.log(this.bookdata);
     },
     //修改
     async updataActice(id, doc) {
@@ -95,10 +95,12 @@ export default {
     async handleDelete(id) {
       console.log(id);
       let { data } = await this.$axios({
-        methods: "DELETE",
+        method: "DELETE",
         url: `/root/radio?id=${id}`,
       });
-      console.log(data);
+            if (data == true) {
+        this.$message.success("删除成功");
+      }
     },
   },
 };

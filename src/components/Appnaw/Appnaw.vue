@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <!-- <div class="nav">
     <div class="naw-one">
       <router-link to="/" @click="isShow(0)">
         <div class="imgbox">
@@ -85,6 +85,31 @@
         </p></router-link
       >
     </div>
+  </div> -->
+  <div class="nav">
+    <van-tabbar active-color="#3DA9E1" v-model="active">
+      <router-link to="/">
+        <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+      </router-link>
+      <router-link to="/bookshelf">
+        <van-tabbar-item name="Bookshelf" icon="bar-chart-o"
+          >书架</van-tabbar-item
+        >
+      </router-link>
+      <router-link to="/listenbooks">
+        <van-tabbar-item name="listenbooks" icon="service"
+          >听书</van-tabbar-item
+        >
+      </router-link>
+      <router-link to="/found">
+        <van-tabbar-item name="found" icon="browsing-history-o"
+          >发现</van-tabbar-item
+        >
+      </router-link>
+      <router-link to="/About" >
+        <van-tabbar-item name="About" icon="user-o">我的</van-tabbar-item>
+      </router-link>
+    </van-tabbar>
   </div>
 </template>
 
@@ -93,6 +118,8 @@ export default {
   name: "Appnaw",
   data() {
     return {
+      active: "home",
+      newpath:"",
       taBar: [
         require("../../assets/img/home.png"),
         require("../../assets/img/书架.png"),
@@ -111,21 +138,45 @@ export default {
   },
 
   methods: {
+    //active-color
     isShow(index) {
       this.taBarActive.forEach((v) => {
         v.isshow = false;
         this.taBarActive[index].isshow = true;
       });
-  
     },
+    isGO() {
+      let path = this.$route.path;
+       this.newpath = path.substring(1);
+       console.log(this.newpath);
+      this.active = this.newpath
+
+    },
+  },
+  mounted() {
+    this.isGO();
   },
 };
 </script>
 
 <style lang="less" scoped>
-.router-link-exact-active {
-  color: hotpink;
+/deep/.van-tabbar-item__text {
+  font-size: 17px;
+  font-weight: 600;
 }
+/deep/.van-badge__wrapper {
+  font-size: 30px;
+  font-weight: 600;
+  //  color: black;
+}
+/deep/.van-tabbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+// .router-link-exact-active {
+//   color: hotpink;
+// }
 hr {
   background-color: #85e0c8;
 }
@@ -133,37 +184,38 @@ hr {
   justify-content: space-between;
   display: flex;
   // margin-left: 1%;
-  height: 100px;
+  height: 70px;
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #fff;
   // margin-right: 7%;
-  .naw-one {
-    padding-left: 2%;
-    padding-bottom: 20px;
-    // height: 60px;
-    align-items: center;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    p {
-      font-size: 14px;
-      color: #333333;
-      padding-top: 10px;
-    }
-    .imgbox {
-      height: 34px;
-      width: 34px;
-      // border-radius: 50%;
-      padding-top: 20px;
-      img {
-        width: 100%;
-        // height: 100%;
-      }
-    }
-  }
+
+  // .naw-one {
+  //   padding-left: 2%;
+  //   padding-bottom: 20px;
+  //   // height: 60px;
+  //   align-items: center;
+  //   width: 25%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   text-align: center;
+  //   align-items: center;
+  //   p {
+  //     font-size: 14px;
+  //     color: #333333;
+  //     padding-top: 10px;
+  //   }
+  //   .imgbox {
+  //     height: 34px;
+  //     width: 34px;
+  //     // border-radius: 50%;
+  //     padding-top: 20px;
+  //     img {
+  //       width: 100%;
+  //       // height: 100%;
+  //     }
+  //   }
+  // }
 }
 </style>

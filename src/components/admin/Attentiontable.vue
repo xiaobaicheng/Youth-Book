@@ -72,7 +72,7 @@ export default {
        method:"PUT",
        url:`/root/guanzhu?gzex=${bookName}&gzname=${bookUser}&id=${id}`
      })
-     console.log(data);
+    //  console.log(data);
     },
     //添加
     async submitbok() {
@@ -81,16 +81,18 @@ export default {
         method: "POST",
         url: `/root/guanzhu?gzex=${bookname}&gzname=${booknr}`,
       });
-      console.log(data);
+      // console.log(data);
     },
     //删除
     async handleDelete(id) {
-      console.log(id);
+      // console.log(id);
       let { data } = await this.$axios({
-        methods: "DELETE",
+        method: "DELETE",
         url: `/root/guanzhu?id=${id}`,
       });
-      console.log(data);
+          if (data == true) {
+        this.$message.success("删除成功");
+      }
     },
   },
 };

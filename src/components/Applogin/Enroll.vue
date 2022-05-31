@@ -98,14 +98,13 @@ export default {
   methods: {
    async submitlogin() {
       if (this.checked) {
-      //  http://124.221.168.57:8099/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=499755
-    // http://124.221.168.57:8099/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=499755
 
       let {telephone,validatacode} = this.loginFrom;
       console.log(telephone,validatacode);
-      let {data} = await this.$axios({
-        method:"POST",
-        url:`/root/signUpSms?telephoneLogin=${telephone}&verifyCodeLogin=${validatacode}`
+      let data = await this.$axios({
+        method:"GET",
+        url:`/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=462841`
+        //http://124.221.168.57:8099/root/signUpSms?telephoneSign=19827315228&verifyCodeSign=462841
       })
       console.log(data);
       } else {
@@ -115,7 +114,7 @@ export default {
     async smsSwnd() {
       const {telephone} = this.loginFrom
       console.log(telephone);
-      const {data} = await this.$axios.post("/root/smsSend?telephone="+telephone)
+      const {data} = await this.$axios.get("/root/smsSend?telephone="+telephone)
       if (data.statusCode === "200") {
         this.$message.success("短信验证码获取成功");
       }

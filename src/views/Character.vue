@@ -131,6 +131,7 @@ export default {
   position: relative;
   z-index: -1;
   overflow: hidden;
+  padding-top: 20px;
 }
 .pure_top::after {
   content: "";
