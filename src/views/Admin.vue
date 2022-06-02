@@ -14,8 +14,8 @@
       <Commoditylist />
     </el-tab-pane>
     <el-tab-pane label="广播剧" name="five"><RadioDrama /></el-tab-pane>
-    <el-tab-pane label="上传文件" name="teng">
-      <!-- <van-button type="danger">危险按钮</van-button> -->
+   <!-- <el-tab-pane label="上传文件" name="teng">
+      <van-button type="danger">危险按钮</van-button>
       <el-tooltip
         class="item"
         effect="dark"
@@ -47,12 +47,13 @@
         :show-file-list="false"
         :headers="headers"
       >
-        <!-- action="/api/file/fileUpload" -->
-        <el-button class="btn"
+           <el-button class="btn"
           ><i class="el-icon-paperclip"></i>上传附件</el-button
         >
       </el-upload>
-    </el-tab-pane>
+    </el-tab-pane>  
+      action="/api/file/fileUpload" -->
+   <el-tab-pane label="角色排行榜" name="teng"><Ranking /></el-tab-pane>
   </el-tabs>
 </template>
 
@@ -62,9 +63,10 @@ import BookList from "../components/admin/BookList.vue";
 import Attentiontable from "../components/admin/Attentiontable.vue";
 import Commoditylist from "../components/admin/Commoditylist.vue";
 import RadioDrama from "../components/admin/RadioDrama.vue";
+import Ranking from "../components/admin/Ranking.vue";
 export default {
   name: "Admin",
-  components: { Book, BookList, Attentiontable, Commoditylist, RadioDrama },
+  components: { Book, BookList, Attentiontable, Commoditylist, RadioDrama,Ranking },
   data() {
     return {
       activeName: "teng",

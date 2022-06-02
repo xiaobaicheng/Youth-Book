@@ -92,7 +92,7 @@
         <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
       </router-link>
       <router-link to="/bookshelf">
-        <van-tabbar-item name="Bookshelf" icon="bar-chart-o"
+        <van-tabbar-item name="bookshelf" icon="bar-chart-o"
           >书架</van-tabbar-item
         >
       </router-link>
@@ -106,7 +106,7 @@
           >发现</van-tabbar-item
         >
       </router-link>
-      <router-link to="/About" >
+      <router-link to="/About">
         <van-tabbar-item name="About" icon="user-o">我的</van-tabbar-item>
       </router-link>
     </van-tabbar>
@@ -119,7 +119,7 @@ export default {
   data() {
     return {
       active: "home",
-      newpath:"",
+      newpath: "",
       taBar: [
         require("../../assets/img/home.png"),
         require("../../assets/img/书架.png"),
@@ -139,23 +139,25 @@ export default {
 
   methods: {
     //active-color
-    isShow(index) {
-      this.taBarActive.forEach((v) => {
-        v.isshow = false;
-        this.taBarActive[index].isshow = true;
-      });
-    },
+    // isShow(index) {
+    //   this.taBarActive.forEach((v) => {
+    //     v.isshow = false;
+    //     this.taBarActive[index].isshow = true;
+    //   });
+    // },
     isGO() {
       let path = this.$route.path;
-       this.newpath = path.substring(1);
-       console.log(this.newpath);
-      this.active = this.newpath
-
+      this.newpath = path.substring(1); 
+      this.active = this.newpath;
+      if (!this.newpath){
+        this.active = "home"
+      }
     },
   },
-  mounted() {
+  beforeMount() {
     this.isGO();
   },
+  
 };
 </script>
 

@@ -81,6 +81,7 @@ export default {
         url: `/root/radio?gbLj=${gbLj}&gbLx=${gbLx}&gbName=${gbName}&id=${id}`,
       });
       console.log(data);
+
     },
     //添加
     async submitbok() {
@@ -90,6 +91,8 @@ export default {
         url: `/root/radio?gbName=${bookname}&gbLx=${booknr}&gbLj=${je}`,
       });
       console.log(data);
+            this.getdata();
+
     },
     //删除
     async handleDelete(id) {
@@ -100,6 +103,8 @@ export default {
       });
             if (data == true) {
         this.$message.success("删除成功");
+            this.getdata();
+
       }
     },
   },

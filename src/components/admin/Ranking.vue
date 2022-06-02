@@ -1,44 +1,40 @@
 <template>
-  <div class="book">
-    <input type="text" v-model="book.bookname" placeholder="请输入书单名" />
-    <input type="text" v-model="book.booknr" placeholder="请输入书单内容" />
-    <input type="text" v-model="book.bookUser" placeholder="请输入作者" />
-    <input type="text" v-model="book.bookLx" placeholder="请输入作者" />
-    <input type="text" v-model="book.bookFeiy" placeholder="请输入作者" />
-    <input type="text" v-model="book.bookPf" placeholder="请输入作者" />
+  
+ <div class="book">
+    <input type="text" v-model="book.bookname" placeholder="请输入板块" />
+    <input type="text" v-model="book.booknr" placeholder="请输入简介" />
+    <input type="text" v-model="book.bookUser" placeholder="请输入名称" />
+    <input type="text" v-model="book.bookLx" placeholder="请输入图片" />
+    <input type="text" v-model="book.bookFeiy" placeholder="请输入日期" />
   </div>
   <el-button type="success" @click="submitbok">提交表单</el-button>
   <el-table :data="bookdata" style="width: 100%">
-    <el-table-column label="书单名" width="110">
+    <el-table-column label="板块" width="110">
       <template #default="scope">
-        <el-input v-model="scope.row.bookName"></el-input>
+        <el-input v-model="scope.row.hotDz"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="书单内容" width="120">
+    <el-table-column label="简介" width="120">
       <template #default="scope">
-        <el-input v-model="scope.row.bookZt"></el-input>
+        <el-input v-model="scope.row.hotJs"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="	书籍类型" width="80">
+    <el-table-column label="	名称" width="80">
       <template #default="scope">
-        <el-input v-model="scope.row.bookPx"></el-input>
+        <el-input v-model="scope.row.hotName"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="	评分" width="80">
+    <el-table-column label="图片" width="80">
       <template #default="scope">
-        <el-input v-model="scope.row.bookFeiy"></el-input>
+        <el-input v-model="scope.row.hotPoto"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="作者" width="80">
+    <el-table-column label="日期" width="80">
       <template #default="scope">
-        <el-input v-model="scope.row.bookUser"></el-input>
+        <el-input v-model="scope.row.hotSj"></el-input>
       </template>
     </el-table-column>
-    <el-table-column label="bookZt" width="80">
-      <template #default="scope">
-        <el-input v-model="scope.row.bookPf"></el-input>
-      </template>
-    </el-table-column>
+  
     <el-table-column label="操作">
       <template #default="scope">
         <el-button
@@ -70,7 +66,7 @@
 
 <script>
 export default {
-  name: "BookList",
+  name: "Ranking",
   data() {
     return {
       bookdata: [],
@@ -92,10 +88,10 @@ export default {
     async getdata() {
       let { data } = await this.$axios({
         method: "POST",
-        url: "/root/bookuser/Find",
+        url: "/root/hot/Find",
       });
       this.bookdata = data;
-      // console.log(this.bookdata);
+      console.log(this.bookdata);
     },
     //修改
     async updataActice(id, doc) {
@@ -105,30 +101,32 @@ export default {
         url: `/root/bookuser?bookName=${bookName}&bookUser=${bookUser}&bookPf=${bookPf}&bookFeiy=${bookFeiy}&bookLx=${bookLx}&bookZt=${bookZt}&id=${id}`,
       });
       console.log(data);
-
     },
     //添加
     async submitbok() {
       const { bookname, booknr, bookUser, bookLx, bookFeiy, bookPf } =
         this.book;
+        // http://124.221.168.57:8099/root/hot?hotDz=1&hotJs=1&hotName=1&hotPh=&hotPoto=212
       let { data } = await this.$axios({
         method: "POST",
-        url: `/root/bookuser?bookName=${bookname}&bookUser=${bookUser}&bookPf=${booknr}&bookFeiy=${bookFeiy}&bookLx=${bookLx}&bookZt=${bookPf}`,
+        url: `/root/hot?hotDz=${bookname}&hotJs=${booknr}&hotName=${bookUser}&hotPoto=${bookFeiy}&hotSj=${bookLx}`,
       });
+      if (data.id){
+        this.$message.success("添加成功");
+            this.getdata();
+      }   
       console.log(data);
-
     },
     //删除
     async handleDelete(id) {
     //   console.log(id);
       let { data } = await this.$axios({
         method: "DELETE",
-        url: `/root/bookuser?id=${id}`,
+        url: `/root/hot?id=${id}`,
       });
           if (data == true) {
         this.$message.success("删除成功");
             this.getdata();
-
       }
     },
   },

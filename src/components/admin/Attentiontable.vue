@@ -63,6 +63,7 @@ export default {
         url: "/root/guanzhu/Find",
       });
       this.bookdata = data;
+      
       // console.log(this.bookdata);
     },
     //修改
@@ -73,6 +74,7 @@ export default {
        url:`/root/guanzhu?gzex=${bookName}&gzname=${bookUser}&id=${id}`
      })
     //  console.log(data);
+
     },
     //添加
     async submitbok() {
@@ -82,6 +84,8 @@ export default {
         url: `/root/guanzhu?gzex=${bookname}&gzname=${booknr}`,
       });
       // console.log(data);
+            this.getdata();
+
     },
     //删除
     async handleDelete(id) {
@@ -92,6 +96,8 @@ export default {
       });
           if (data == true) {
         this.$message.success("删除成功");
+            this.getdata();
+
       }
     },
   },

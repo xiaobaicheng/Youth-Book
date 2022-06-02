@@ -15,13 +15,19 @@
       </header>
       <div class="avater-box">
         <div class="avatar">
-          <img src="../assets/img/touxiang.png" alt="" />
+          <img src="../assets/img/touxiang.png" alt="" v-show="!TokenisShow" />
+          <img src="../assets/img/危羽.png" alt="" v-show="TokenisShow" />
         </div>
         <div class="name">
-          <p>北极星fsqyzcd</p>
+          <p v-show="TokenisShow">北极星fsqyzcd</p>
+          <p v-show="!TokenisShow">未登录</p>
           <div class="grade">
-            <div class="dnegji">Lv.11</div>
-            <span class="star">星级用户></span>
+            <div class="dnegji" v-show="TokenisShow">Lv.11</div>
+            <div class="dnegji" v-show="!TokenisShow">Lv.0</div>
+            <span class="star" v-show="TokenisShow">星级用户></span>
+            <span class="star" v-show="!TokenisShow" @click="login"
+              >请先登录></span
+            >
           </div>
         </div>
       </div>
@@ -180,9 +186,8 @@
         </div>
         <span>主题切换</span>
         <span class="jiantou">></span>
-
       </div>
-      <div class="purse">
+      <div class="purse" @click="Customer">
         <div class="imgbox">
           <img src="../assets/img/about/xaopng.png" alt="" />
         </div>
@@ -198,7 +203,7 @@
       </div>
     </div>
   </div>
-  <hr>
+  <hr />
 </template>
 
 <script>
@@ -206,30 +211,49 @@ export default {
   name: "About",
   data() {
     return {
+      // Token:"",
+      TokenisShow: false,
       imgtwo: [
         require("../assets/img/home/one.png"),
         require("../assets/img/home/图层 4.png"),
       ],
     };
   },
-  methods:{
-    setup(){
-      this.$router.push("/Setup")
+  created() {
+    this.getlogin();
+  },
+  methods: {
+    //去往登陆页面
+    login() {
+      this.$router.push("/Appphonelogin");
     },
-    jvenver(){
-      this.$router.push("/Juvenile")
-
+    //客服页面
+    Customer(){
+      this.$router.push("/Customer")
     },
-    welfare(){
-      this.$router.push("/Welfare")
-    }
-  }
+    getlogin() {
+      let logindata = localStorage.getItem("Token");
+      // this.Token = logindata
+      if (logindata) {
+        this.TokenisShow = true;
+      }
+    },
+    setup() {
+      this.$router.push("/Setup");
+    },
+    jvenver() {
+      this.$router.push("/Juvenile");
+    },
+    welfare() {
+      this.$router.push("/Welfare");
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
-hr{
-    background-color: #98DCCB;
+hr {
+  background-color: #98dccb;
 }
 /deep/.el-carousel__item {
   display: flex;
@@ -332,9 +356,9 @@ hr{
       height: 4.0625rem;
       align-items: center;
       display: flex;
-        .jiantou{
-          // position: absolute;
-        text-align:center;
+      .jiantou {
+        // position: absolute;
+        text-align: center;
         margin-left: 29%;
         // outline: 0.0625rem black solid;
       }
@@ -347,7 +371,7 @@ hr{
           width: 100%;
         }
       }
-    
+
       span {
         // outline: 0.0625rem black solid;
         color: #333333;

@@ -4,16 +4,16 @@
   <div class="broder">
     <div class="enroll" @click="isShow">
       <span> 手机号注册</span>
-      <div class="oneLine" v-show="!show"></div>
+      <div class="oneLine" v-show="show"></div>
     </div>
     <div class="logn" @click="isShow2">
       <span> 密码登录</span>
-      <div class="Line" v-show="show"></div>
+      <div class="Line" v-show="!show"></div>
     </div>
   </div>
   <div class="centent">
-    <div v-show="!show"><Enroll></Enroll></div>
-    <div v-show="show"><PossLogin></PossLogin></div>
+    <div v-show="show"><Enroll></Enroll></div>
+    <div v-show="!show"><PossLogin></PossLogin></div>
   </div>
 </template> 
 
@@ -31,10 +31,10 @@ export default {
   },
   methods: {
     isShow() {
-      this.show = false;
+      this.show = true;
     },
     isShow2() {
-      this.show = true;
+      this.show = false;
     },
     back() {
       this.$router.go(-1);

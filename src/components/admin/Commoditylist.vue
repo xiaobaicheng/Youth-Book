@@ -64,6 +64,7 @@ export default {
       });
       this.bookdata = data;
       // console.log(this.bookdata);
+
     },
     //修改
    async updataActice(id, doc) {
@@ -74,6 +75,7 @@ jiage}= doc
        url:`/root/commodity?jiage=${jiage}&name=${name}&id=${id}`
      })
      console.log(data);
+
     },
     //添加
     async submitbok() {
@@ -82,7 +84,6 @@ jiage}= doc
         method: "POST",
         url: `/root/commodity?jiage=${bookname}&name=${booknr}`,
       });
-      console.log(data);
     },
     //删除
     async handleDelete(id) {
@@ -93,6 +94,8 @@ jiage}= doc
       });
           if (data == true) {
         this.$message.success("删除成功");
+            this.getdata();
+
       }
     },
   },

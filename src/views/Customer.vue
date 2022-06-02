@@ -22,11 +22,9 @@
 
 <script>
 export default {
-  name: "Customer",
+  name: " ",
   data() {
-    return {
-        
-    };
+    return {};
   },
   methods: {
     returnAbount() {

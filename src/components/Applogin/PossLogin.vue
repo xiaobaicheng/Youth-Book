@@ -75,7 +75,7 @@ export default {
       rules: {
         //form表单里rules属性绑定的对象，用来对表单内控件做格式校验
         tephone: [
-          { required: true, message: "请输入你的电话" },
+          // { required: true, message: "请输入你的电话" },
           {
             validator(rule, value, callback) {
               if (value.length < 8) {
@@ -115,16 +115,25 @@ export default {
   },
   methods: {
     async submitLogin() {
-      let { data } = await this.$axios({
-        method: "POST",
-        url: `/root/loginSms?telephoneLogin=19827315228&verifyCodeLogin=461586`,
-        // http://124.221.168.57:8099/root/loginSms?telephoneLogin=19827315228&verifyCodeLogin=181969
-        // data: {
-        //   user: this.loginFrom.tephone,
-        // },
-      });
-      console.log(data);
-      // this.$router.push("/Authorization")
+      if (this.checked) {
+        let { data } = await this.$axios({
+          method: "POST",
+          url: `/root/loginPwd`,
+          data: {
+            telephone: this.loginFrom.tephone,
+            password: this.loginFrom.password,
+          },
+        });
+        console.log(data);
+        if (data.statusCode == "200") {
+          this.$message.success(data.msg);
+          localStorage.setItem('Token',data.data.id)
+          this.$router.push('/About')
+        }
+      } else {
+        return this.$message.error("请勾选用户协议后再登录");
+      }
+
     },
   },
 };

@@ -70,6 +70,7 @@ export default {
         url: "/root/book/Find",
       });
       this.bookdata = data;
+
     },
     //修改http://124.221.168.57:8099/root/book?bookName=12122121111&bookNr=1&bookUser=1&bookid=15
     async updataActice(id, doc) {
@@ -79,6 +80,7 @@ export default {
         url: `/root/book?bookName=${bookName}&bookNr=${bookNr}&bookUser=${bookUser}&bookid=${id}`,
       });
       //  console.log(data);
+
     },
     async submitbok() {
       const { bookname, booknr, bookUser } = this.book;
@@ -96,6 +98,8 @@ export default {
       });
       if (data == true) {
         this.$message.success("删除成功");
+            this.getdata();
+
       }
     },
   },

@@ -15,13 +15,13 @@
             </el-carousel-item>
           </el-carousel>
         </div>
-        
+
         <div class="time">
           <div class="timebox">
             <div class="imgbox">
               <img src="../assets/img/home/shijian.png" alt="" />
             </div>
-            <span >时间表</span>
+            <span>时间表</span>
           </div>
           <div class="timebox">
             <div class="imgbox">
@@ -35,13 +35,13 @@
           <span>></span>
         </div>
         <div class="hotremend">
-          <div class="hotbox">
+          <div class="hotbox" v-for="item in bookdata" :key="item.id">
             <div class="hotimg">
               <img src="../assets/img/home/Rodio1.png" alt="" />
             </div>
-            <span>谁怕谁</span>
+            <span>{{ item.gbName }}</span>
           </div>
-          <div class="hotbox">
+          <!-- <div class="hotbox">
             <div class="hotimg">
               <img src="../assets/img/home/Rodio2.png" alt="" />
             </div>
@@ -70,7 +70,7 @@
               <img src="../assets/img/home/Rodio6.png" alt="" />
             </div>
             <span>逆水横刀</span>
-          </div>
+          </div> -->
         </div>
         <div class="Hot">
           <span>人气周榜</span>
@@ -79,37 +79,39 @@
         <div class="popularity">
           <div class="coverbox">
             <div class="coverimg">
-              <img src="../assets/img/home/cover1.png" alt="">
+              <img src="../assets/img/home/cover1.png" alt="" />
             </div>
             <span> 老子修仙回来了 </span>
           </div>
           <div class="coverbox">
             <div class="coverimg">
-              <img src="../assets/img/home/cover2.png" alt="">
+              <img src="../assets/img/home/cover2.png" alt="" />
             </div>
             <span> 如果月亮不抱你 </span>
           </div>
           <div class="coverbox">
             <div class="coverimg">
-              <img src="../assets/img/home/cover3.png" alt="">
+              <img src="../assets/img/home/cover3.png" alt="" />
             </div>
             <span> 从小蝌蚪开始无敌 </span>
           </div>
           <div class="coverbox">
             <div class="coverimg">
-              <img src="../assets/img/home/cover4.png" alt="">
+              <img src="../assets/img/home/cover4.png" alt="" />
             </div>
             <span> 人族禁地 </span>
           </div>
         </div>
         <h1 class="listen">大家都在听</h1>
         <div class="listenb">
-          <button>天选之人</button>
-          <button>遮天 </button>
+          <button v-for="item in findDbdata" :key="item.id">
+            {{ item.gbName }}
+          </button>
+          <!-- <button>遮天 </button>
           <button>我靠生崽火爆全星</button>
           <button>还债 </button>
           <button>斗罗大陆</button>
-          <button>武道争锋</button>
+          <button>武道争锋</button> -->
         </div>
       </el-tab-pane>
       <el-tab-pane label="完结" name="second">完结 </el-tab-pane>
@@ -124,6 +126,8 @@ export default {
   name: "Radio",
   data() {
     return {
+      bookdata: [],
+      findDbdata: [],
       activeName: "first",
       Radio: [
         require("../assets/img//home/Radio1.png"),
@@ -133,11 +137,29 @@ export default {
       ],
     };
   },
-  methods:{
-    returnhome(){
-      this.$router.push("/")
-    }
-  }
+  methods: {
+    returnhome() {
+      this.$router.push("/");
+    },
+    //全查
+    async getdata() {
+      let { data } = await this.$axios({
+        method: "POST",
+        url: "/root/radio/Find",
+      });
+      this.bookdata = data;
+      // console.log(this.bookdata);
+    },
+    async getfindBD() {
+      let { data } = await this.$axios.post("/root/radio/findb");
+      // console.log(data);
+      this.findDbdata = data;
+    },
+  },
+  created() {
+    this.getfindBD();
+    this.getdata();
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -262,38 +284,38 @@ header {
     }
   }
 }
-.popularity{
+.popularity {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.875rem;
   margin-top: 1rem;
-  .coverbox{
+  .coverbox {
     width: 4.4375rem;
     height: 6.875rem;
-        span {
+    span {
       font-size: 0.75rem;
       margin-top: 0.625rem;
     }
-    .coverimg{
+    .coverimg {
       height: 5.625rem;
       width: 100%;
-      img{
-              height: 100%;
+      img {
+        height: 100%;
         width: 100%;
       }
     }
   }
 }
-.listen{
+.listen {
   font-size: 1rem;
 }
-.listenb{
+.listenb {
   display: flex;
   flex-wrap: wrap;
-  button{
+  button {
     margin-left: 0.625rem;
     margin-top: 0.625rem;
-    background-color: #EBEBEB;
+    background-color: #ebebeb;
     border: none;
     border-radius: 0.25rem;
   }

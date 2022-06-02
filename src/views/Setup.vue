@@ -2,7 +2,7 @@
   <div class="wrap">
     <header>
       <div class="purue" @click="returnabount">
-        <img src="../assets/img/setup.png" alt="">
+        <img src="../assets/img/setup.png" alt="" />
       </div>
       <span>设置</span>
     </header>
@@ -62,51 +62,51 @@
   </div>
   <div class="wrap3">
     <div class="examine">
-        <div class="examine-box">
-            <span>消息和隐私设置</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>网络诊断</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>检查更新</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>弹幕设置</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>清空缓存</span>
-            <span class="cache">218.38MB</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>下载路径</span>
-            <span class="cache">手机存储</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>关于青书家</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>隐私政策</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>个人信息收集清单</span>
-            <span>></span>
-        </div>
-        <div class="examine-box">
-            <span>第三方SDK情况表</span>
-            <span>></span>
-        </div>
+      <div class="examine-box">
+        <span>消息和隐私设置</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>网络诊断</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>检查更新</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>弹幕设置</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>清空缓存</span>
+        <span class="cache">218.38MB</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>下载路径</span>
+        <span class="cache">手机存储</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>关于青书家</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>隐私政策</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>个人信息收集清单</span>
+        <span>></span>
+      </div>
+      <div class="examine-box">
+        <span>第三方SDK情况表</span>
+        <span>></span>
+      </div>
     </div>
   </div>
-  <button>退出</button>
+  <button @click="updatalogin">退出</button>
 </template>
 <script>
 export default {
@@ -120,11 +120,18 @@ export default {
       gttps: true,
     };
   },
-  methods:{
-    returnabount(){
-      this.$router.go(-1)
-    }
-  }
+  methods: {
+    updatalogin() {
+      localStorage.removeItem("Token");
+              this.$message.success('退出登录成功');
+      this.$router.push("/About");
+
+
+    },
+    returnabount() {
+      this.$router.go(-1);
+    },
+  },
 };
 </script>
 
@@ -145,7 +152,7 @@ header {
     height: 18px;
     width: 18px;
     border-radius: 50%;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
@@ -172,34 +179,33 @@ header {
     justify-content: space-between;
   }
 }
-.examine{
+.examine {
   height: 600px;
   padding-top: 10px;
   width: 94%;
   margin-left: 3%;
   margin-right: 3%;
   margin-top: 10px;
-    display: flex;
+  display: flex;
   flex-direction: column;
-  .examine-box{
-      height: 10%;
-       display: flex;
+  .examine-box {
+    height: 10%;
+    display: flex;
     justify-content: space-between;
-    .cache{
-  margin-left: 43%;
+    .cache {
+      margin-left: 43%;
     }
   }
 }
-button{
-      height: 50px;
+button {
+  height: 50px;
   margin-left: 15%;
   margin-right: 20%;
   width: 65%;
   margin-top: 24px;
-  background-color: #4F9684;
+  background-color: #4f9684;
   color: #ffffff;
   border-radius: 14px;
   border: none;
-
 }
 </style>
